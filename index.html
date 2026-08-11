@@ -1,16 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zyrazin | Elegance, Made for You</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zyrazin | Jewellery</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Georgia,serif;
+  background:#fffafa;
+  color:#34272b;
+}
+
+/* NAVBAR */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 7%;
+  background:#fff;
+  border-bottom:1px solid #f1d9df;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav-logo{
+  text-decoration:none;
+  color:#8f626c;
+  font-size:25px;
+  letter-spacing:5px;
+  font-weight:bold;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#5c454b;
+  font-size:15px;
+}
+
+.nav-links a:hover{
+  color:#b77b88;
+}
+
+/* HERO */
+
+.hero{
+  min-height:520px;
+  background:
+  linear-gradient(rgba(255,245,247,.45),rgba(255,245,247,.45)),
+  url("hero-bg.jpg.PNG") center/cover no-repeat;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-content{
+  background:rgba(255,250,250,.72);
+  padding:45px 35px;
+  max-width:650px;
+}
+
+.hero-small{
+  color:#a56f79;
+  letter-spacing:5px;
+  font-size:15px;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:58px;
+  letter-spacing:8px;
+  color:#493238;
+}
+
+.hero-tagline{
+  font-size:25px;
+  color:#86616a;
+  margin:15px 0;
+}
+
+.hero-description{
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+.hero-button{
+  display:inline-block;
+  background:#eab8c4;
+  color:white;
+  padding:13px 28px;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* CATEGORY */
+
+.categories{
+  text-align:center;
+  padding:75px 6%;
+}
+
+.section-label{
+  color:#b77c88;
+  letter-spacing:4px;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.categories h2{
+  font-size:42px;
+  margin-bottom:35px;
+}
+
+.category-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.category-buttons button{
+  background:#fce8ed;
+  border:1px solid #e5b6c2;
+  color:#76525c;
+  padding:15px 30px;
+  border-radius:35px;
+  font-family:Georgia,serif;
+  font-size:16px;
+}
+
+/* PRODUCTS */
+
+.products-section{
+  padding:70px 6%;
+  background:#fff;
+}
+
+.products-section h2{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.products-subtitle{
+  text-align:center;
+  color:#9b737c;
+  margin-bottom:45px;
+}
+
+.product-grid{
+  max-width:1100px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+.product-card{
+  background:white;
+  border:1px solid #f0dce1;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 18px rgba(100,60,70,.08);
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+}
+
+.product-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+}
+
+.product-info{
+  padding:17px;
+  text-align:center;
+}
+
+.product-code{
+  color:#b27b86;
+  font-size:12px;
+  letter-spacing:1px;
+  margin-bottom:6px;
+}
+
+.product-name{
+  font-size:17px;
+  min-height:42px;
+}
+
+.price{
+  font-size:18px;
+  font-weight:bold;
+  margin:12px 0;
+  color:#493238;
+}
+
+.cart-button{
+  width:100%;
+  border:none;
+  background:#eab8c4;
+  color:white;
+  padding:11px;
+  border-radius:25px;
+  font-family:Georgia,serif;
+  cursor:pointer;
+}
+
+.cart-button:hover{
+  background:#d99eac;
+}
+
+/* CART */
+
+.cart-box{
+  max-width:700px;
+  margin:50px auto 0;
+  background:#fff7f9;
+  border:1px solid #efd5dc;
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+}
+
+.cart-box h3{
+  margin-bottom:15px;
+}
+
+#cart-items{
+  margin:15px 0;
+  line-height:1.8;
+}
+
+.order-button{
+  display:inline-block;
+  background:#8f626c;
+  color:white;
+  padding:12px 25px;
+  border-radius:25px;
+  text-decoration:none;
+}
+
+/* ABOUT */
+
+.about{
+  padding:75px 8%;
+}
+
+.about-box{
+  max-width:1000px;
+  margin:auto;
+  background:#f8d7df;
+  padding:45px;
+  border-radius:5px;
+}
+
+.about h2{
+  font-size:38px;
+  margin-bottom:20px;
+}
+
+.about p{
+  line-height:1.8;
+  margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact{
+  text-align:center;
+  padding:70px 6%;
+  background:#fff;
+}
+
+.contact h2{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.contact p{
+  margin-bottom:10px;
+}
+
+.contact a{
+  color:#a26372;
+  font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:55px 20px;
+  background:#fffafa;
+  border-top:1px solid #f0dce1;
+}
+
+footer h3{
+  font-size:30px;
+  letter-spacing:6px;
+  color:#95636e;
+  margin-bottom:15px;
+}
+
+footer p{
+  color:#80666d;
+  margin:8px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav-links{
+    gap:15px;
+  }
+
+  .hero{
+    min-height:430px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero-tagline{
+    font-size:20px;
+  }
+
+  .categories h2,
+  .products-section h2{
+    font-size:32px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
+
+  .product-name{
+    font-size:14px;
+  }
+
+  .about-box{
+    padding:30px 20px;
+  }
+
+}
+
+@media(max-width:450px){
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .product-info{
+    padding:12px 8px;
+  }
+
+  .product-card img{
+    aspect-ratio:1/1;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- Navigation -->
+
+<!-- NAVIGATION -->
+
 <nav class="navbar">
+
   <a href="#home" class="nav-logo">ZYRAZIN</a>
 
   <div class="nav-links">
@@ -19,10 +410,12 @@
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
+
 </nav>
 
 
-<!-- Hero Section -->
+<!-- HERO -->
+
 <header class="hero" id="home">
 
   <div class="hero-content">
@@ -32,7 +425,7 @@
     <h1>ZYRAZIN</h1>
 
     <p class="hero-tagline">
-      Jewellery Crafted for Your Unique Style
+      Jewellery, Crafted for You
     </p>
 
     <p class="hero-description">
@@ -48,10 +441,13 @@
 </header>
 
 
-<!-- Categories -->
+<!-- CATEGORIES -->
+
 <section class="categories" id="shop">
 
-  <p class="section-label">EXPLORE OUR COLLECTION</p>
+  <p class="section-label">
+    EXPLORE OUR COLLECTION
+  </p>
 
   <h2>Shop by Category</h2>
 
@@ -69,44 +465,400 @@
 </section>
 
 
-<!-- About Zyrazin -->
-<section id="about" style="text-align:center; padding:70px 25px; background:#fff4f7;">
+<!-- PRODUCTS -->
 
-  <p style="font-size:14px; letter-spacing:4px; color:#b88a7a;">
-    THE STORY BEHIND ZYRAZIN
+<section class="products-section">
+
+  <h2>Our Necklaces</h2>
+
+  <p class="products-subtitle">
+    Discover our beautiful necklace collection
   </p>
 
-  <h2 style="font-size:38px; color:#2f2528; margin-bottom:25px;">
-    About Zyrazin
-  </h2>
 
-  <div style="max-width:700px; margin:auto;">
+  <div class="product-grid">
 
-    <p style="font-size:17px; color:#6b5a5f; line-height:1.8;">
-      Welcome to Zyrazin ✨
+
+    <!-- CH01 -->
+
+    <div class="product-card">
+
+      <img src="products/CH01 - Vintage Rose Necklace.png"
+           alt="Vintage Rose Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH01</p>
+
+        <h3 class="product-name">
+          Vintage Rose Necklace
+        </h3>
+
+        <p class="price">₹220</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH01 - Vintage Rose Necklace',220)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH02 -->
+
+    <div class="product-card">
+
+      <img src="products/CH02 - Red Butterfly Necklace.png"
+           alt="Red Butterfly Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH02</p>
+
+        <h3 class="product-name">
+          Red Butterfly Necklace
+        </h3>
+
+        <p class="price">₹200</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH02 - Red Butterfly Necklace',200)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH03 -->
+
+    <div class="product-card">
+
+      <img src="products/CH03 - Floral Vibes Necklace.png"
+           alt="Floral Vibes Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH03</p>
+
+        <h3 class="product-name">
+          Floral Vibes Necklace
+        </h3>
+
+        <p class="price">₹250</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH03 - Floral Vibes Necklace',250)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH04 -->
+
+    <div class="product-card">
+
+      <img src="products/CH04 - Bow & Heart Necklace.png"
+           alt="Bow and Heart Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH04</p>
+
+        <h3 class="product-name">
+          Bow & Heart Necklace
+        </h3>
+
+        <p class="price">₹220</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH04 - Bow & Heart Necklace',220)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH05 -->
+
+    <div class="product-card">
+
+      <img src="products/CH05 - Black Butterfly Necklace.png"
+           alt="Black Butterfly Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH05</p>
+
+        <h3 class="product-name">
+          Black Butterfly Necklace
+        </h3>
+
+        <p class="price">₹200</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH05 - Black Butterfly Necklace',200)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH06 -->
+
+    <div class="product-card">
+
+      <img src="products/CH06 - Golden Charm Necklace.png"
+           alt="Golden Charm Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH06</p>
+
+        <h3 class="product-name">
+          Golden Charm Necklace
+        </h3>
+
+        <p class="price">₹230</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH06 - Golden Charm Necklace',230)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH07 -->
+
+    <div class="product-card">
+
+      <img src="products/CH07 - White Butterfly Necklace.png"
+           alt="White Butterfly Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH07</p>
+
+        <h3 class="product-name">
+          White Butterfly Necklace
+        </h3>
+
+        <p class="price">₹220</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH07 - White Butterfly Necklace',220)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH08 -->
+
+    <div class="product-card">
+
+      <img src="products/CH08 - Emerald Stone Necklace.png"
+           alt="Emerald Stone Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH08</p>
+
+        <h3 class="product-name">
+          Emerald Stone Necklace
+        </h3>
+
+        <p class="price">₹250</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH08 - Emerald Stone Necklace',250)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH09 -->
+
+    <div class="product-card">
+
+      <img src="products/CH09 - Black Heart Necklace.png"
+           alt="Black Heart Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH09</p>
+
+        <h3 class="product-name">
+          Black Heart Necklace
+        </h3>
+
+        <p class="price">₹220</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH09 - Black Heart Necklace',220)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH10 -->
+
+    <div class="product-card">
+
+      <img src="products/CH10 - Angel Number Necklace.png"
+           alt="Angel Number Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH10</p>
+
+        <h3 class="product-name">
+          Angel Number Necklace
+        </h3>
+
+        <p class="price">₹200</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH10 - Angel Number Necklace',200)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH11 -->
+
+    <div class="product-card">
+
+      <img src="products/CH11 - Red Tulip Necklace.png"
+           alt="Red Tulip Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH11</p>
+
+        <h3 class="product-name">
+          Red Tulip Necklace
+        </h3>
+
+        <p class="price">₹200</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH11 - Red Tulip Necklace',200)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CH12 -->
+
+    <div class="product-card">
+
+      <img src="products/CH12 - White Flower Necklace.png"
+           alt="White Flower Necklace">
+
+      <div class="product-info">
+
+        <p class="product-code">CH12</p>
+
+        <h3 class="product-name">
+          White Flower Necklace
+        </h3>
+
+        <p class="price">₹200</p>
+
+        <button class="cart-button"
+          onclick="addToCart('CH12 - White Flower Necklace',200)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- CART -->
+
+  <div class="cart-box">
+
+    <h3>🛍️ Your Cart</h3>
+
+    <div id="cart-items">
+      Your cart is empty.
+    </div>
+
+    <p id="cart-total">
+      Total: ₹0
     </p>
 
-    <p style="font-size:16px; color:#6b5a5f; line-height:1.8;">
-      Zyrazin was created with a passion for elegant jewellery
-      that makes everyday moments feel a little more special.
+    <br>
+
+    <a class="order-button"
+       href="mailto:zyrazins@gmail.com?subject=Zyrazin%20Jewellery%20Order">
+       Send Order
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <div class="about-box">
+
+    <h2>About Zyrazin</h2>
+
+    <p>
+      Hi, welcome to Zyrazin ✨
     </p>
 
-    <p style="font-size:16px; color:#6b5a5f; line-height:1.8;">
-      We believe jewellery is more than an accessory — it is a
-      reflection of your personality, your style, and the little
-      moments you choose to celebrate.
+    <p>
+      Zyrazin was born from a passion for refined style
+      and everyday elegance. Our vision is simple —
+      to create jewellery that feels beautiful,
+      confident and effortlessly feminine.
     </p>
 
-    <p style="font-size:16px; color:#6b5a5f; line-height:1.8;">
-      Our collection brings together delicate designs, feminine
-      details and everyday elegance, carefully selected for women
-      who love to express themselves with confidence.
+    <p>
+      We bring you carefully selected jewellery pieces
+      designed to complement your everyday style and
+      special moments.
     </p>
 
-    <p style="font-size:16px; color:#6b5a5f; line-height:1.8;">
-      At Zyrazin, we are committed to bringing you beautiful pieces
-      that are easy to wear, easy to love, and made to become part
-      of your everyday style. 💗
+    <p>
+      Discover your favourite piece and let your style shine. 💗
     </p>
 
   </div>
@@ -114,43 +866,105 @@
 </section>
 
 
-<!-- Contact -->
-<section id="contact" style="text-align:center; padding:70px 20px; background:#fff9fb;">
+<!-- CONTACT -->
 
-  <p style="font-size:14px; letter-spacing:4px; color:#b88a7a; margin-bottom:10px;">
-    GET IN TOUCH
+<section class="contact" id="contact">
+
+  <h2>Contact Us</h2>
+
+  <p>We'd love to hear from you.</p>
+
+  <p>
+    For enquiries, product details or assistance,
+    contact us at:
   </p>
 
-  <h2 style="font-size:38px; color:#2f2528; margin:0 0 20px;">
-    Contact Us
-  </h2>
+  <br>
 
-  <p style="font-size:17px; color:#6b5a5f; line-height:1.7; max-width:600px; margin:0 auto 10px;">
-    We'd love to hear from you.
-  </p>
-
-  <p style="font-size:15px; color:#6b5a5f; line-height:1.7; max-width:600px; margin:0 auto 25px;">
-    For product enquiries, details or assistance, feel free to reach out to us.
-  </p>
-
-  <a href="mailto:zyrazins@gmail.com"
-     style="display:inline-block; padding:13px 28px; border:1px solid #d9a5b5; border-radius:30px; color:#a83f70; text-decoration:none; font-weight:bold;">
-    ✉ zyrazins@gmail.com
+  <a href="mailto:zyrazins@gmail.com">
+    zyrazins@gmail.com
   </a>
 
 </section>
 
 
-<!-- Footer -->
+<!-- FOOTER -->
+
 <footer>
 
   <h3>ZYRAZIN</h3>
 
-  <p>Jewellery Crafted with Love for You</p>
+  <p>Jewellery, Crafted for You</p>
 
-  <p>© 2026 Zyrazin. All rights reserved.</p>
+  <p>
+    © 2026 Zyrazin. All rights reserved.
+  </p>
 
 </footer>
+
+
+<!-- CART SCRIPT -->
+
+<script>
+
+let cart = [];
+
+function addToCart(name, price){
+
+  cart.push({
+    name:name,
+    price:price
+  });
+
+  updateCart();
+
+}
+
+function updateCart(){
+
+  const cartItems =
+    document.getElementById("cart-items");
+
+  const cartTotal =
+    document.getElementById("cart-total");
+
+  if(cart.length === 0){
+
+    cartItems.innerHTML =
+      "Your cart is empty.";
+
+    cartTotal.innerHTML =
+      "Total: ₹0";
+
+    return;
+
+  }
+
+  let html = "";
+  let total = 0;
+
+  cart.forEach(function(item,index){
+
+    html +=
+      (index + 1) +
+      ". " +
+      item.name +
+      " — ₹" +
+      item.price +
+      "<br>";
+
+    total += item.price;
+
+  });
+
+  cartItems.innerHTML = html;
+
+  cartTotal.innerHTML =
+    "Total: ₹" + total;
+
+}
+
+</script>
 
 </body>
 </html>
