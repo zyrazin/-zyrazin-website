@@ -8,67 +8,187 @@
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Georgia, "Times New Roman", serif;
       background: #fffafa;
-      color: #30252a;
+      color: #34272c;
     }
 
-    /* HEADER */
+    /* ================= HEADER ================= */
+
     header {
-      background: #ffffff;
+      background: rgba(255,255,255,0.96);
+      padding: 20px 15px;
       text-align: center;
-      padding: 30px 15px 18px;
-      border-bottom: 1px solid #ead5dc;
+      border-bottom: 1px solid #efdde2;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo {
-      font-size: 34px;
+      font-size: 30px;
       letter-spacing: 6px;
       color: #9b6877;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 28px;
+      align-items: center;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     nav a {
+      color: #503b42;
       text-decoration: none;
-      color: #5b4048;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     nav a:hover {
-      color: #9b6877;
+      color: #b27a8b;
     }
 
-    /* PAGE TITLE */
-    .page-title {
+    /* ================= HOME ================= */
+
+    #home {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.18),
+          rgba(255,245,248,0.28)
+        ),
+        url("hero-bg.jpg.PNG");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-content {
       text-align: center;
-      font-size: 48px;
-      margin: 30px 0;
-      color: #2f2529;
+      padding: 40px 25px;
+      max-width: 700px;
     }
 
-    /* PRODUCTS */
+    .hero-content h1 {
+      font-size: 58px;
+      letter-spacing: 7px;
+      color: #7e5361;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 22px;
+      color: #49363d;
+      margin-bottom: 25px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #9b6877;
+      color: white;
+      text-decoration: none;
+      padding: 13px 30px;
+      border-radius: 30px;
+      font-size: 17px;
+    }
+
+    .hero-btn:hover {
+      background: #805361;
+    }
+
+    /* ================= SECTION TITLE ================= */
+
+    .section-title {
+      text-align: center;
+      padding: 55px 15px 30px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      color: #3c2d33;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #806b72;
+      font-size: 17px;
+    }
+
+    /* ================= CATEGORIES ================= */
+
+    .categories {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto 50px;
+
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(170px, 1fr));
+
+      gap: 18px;
+    }
+
+    .category-card {
+      background: white;
+      border: 1px solid #ead5dc;
+      border-radius: 20px;
+      padding: 25px 15px;
+      text-align: center;
+      text-decoration: none;
+      color: #563e47;
+      box-shadow: 0 5px 18px rgba(130,90,100,0.08);
+      transition: 0.3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      background: #fff5f7;
+    }
+
+    .category-icon {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .category-card h3 {
+      font-size: 20px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    #necklaces {
+      padding-top: 20px;
+    }
+
     .products {
       width: 94%;
       max-width: 1200px;
       margin: auto;
+
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+
       gap: 24px;
-      padding-bottom: 50px;
+
+      padding-bottom: 60px;
     }
 
     .product-card {
@@ -76,13 +196,18 @@
       border: 1px solid #ead5dc;
       border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 5px 18px rgba(120, 80, 90, 0.10);
+
+      box-shadow:
+        0 5px 18px rgba(120,80,90,0.10);
+
       transition: 0.3s;
     }
 
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(120, 80, 90, 0.18);
+
+      box-shadow:
+        0 10px 25px rgba(120,80,90,0.18);
     }
 
     .product-card img {
@@ -98,15 +223,15 @@
     }
 
     .product-name {
-      font-size: 21px;
-      line-height: 1.25;
+      font-size: 20px;
+      line-height: 1.3;
       margin-bottom: 8px;
     }
 
     .price {
       font-size: 20px;
       font-weight: bold;
-      color: #8f5e6d;
+      color: #9b6877;
       margin-bottom: 14px;
     }
 
@@ -115,10 +240,13 @@
       border: none;
       border-radius: 25px;
       padding: 12px;
+
       background: #9b6877;
       color: white;
+
       font-family: Georgia, "Times New Roman", serif;
       font-size: 16px;
+
       cursor: pointer;
     }
 
@@ -126,34 +254,49 @@
       background: #805462;
     }
 
-    /* PRODUCT VIEW MODAL */
+    /* ================= MODAL ================= */
+
     .modal {
       display: none;
+
       position: fixed;
       z-index: 1000;
+
       inset: 0;
-      background: rgba(35, 25, 30, 0.65);
+
+      background: rgba(35,25,30,0.70);
+
       padding: 20px;
+
       align-items: center;
       justify-content: center;
     }
 
     .modal-content {
       background: #fffafa;
+
       width: 100%;
       max-width: 500px;
+
       max-height: 92vh;
       overflow-y: auto;
+
       border-radius: 25px;
+
       position: relative;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+
+      box-shadow:
+        0 15px 50px rgba(0,0,0,0.30);
     }
 
     .modal-content img {
       width: 100%;
       max-height: 500px;
+
       object-fit: cover;
+
       display: block;
+
       border-radius: 25px 25px 0 0;
     }
 
@@ -163,7 +306,7 @@
     }
 
     .modal-info h2 {
-      font-size: 30px;
+      font-size: 29px;
       margin-bottom: 10px;
     }
 
@@ -176,28 +319,64 @@
 
     .close-btn {
       position: absolute;
+
       top: 12px;
       right: 15px;
+
       width: 40px;
       height: 40px;
+
       border: none;
       border-radius: 50%;
-      background: rgba(255,255,255,0.9);
+
+      background: rgba(255,255,255,0.92);
+
       color: #5c4149;
+
       font-size: 25px;
+
       cursor: pointer;
+
       z-index: 5;
     }
 
-    /* CART */
+    .add-cart-btn {
+      border: none;
+
+      background: #9b6877;
+      color: white;
+
+      padding: 13px 28px;
+
+      border-radius: 30px;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 16px;
+
+      cursor: pointer;
+    }
+
+    /* ================= CART ================= */
+
+    #cart {
+      padding: 30px 0 60px;
+    }
+
     .cart-section {
-      background: #fff6f8;
+      background: #fff5f7;
+
       border: 1px solid #ead5dc;
+
       border-radius: 25px;
-      margin: 20px auto 50px;
+
+      margin: 20px auto;
+
       padding: 35px 20px;
+
       width: 94%;
       max-width: 900px;
+
       text-align: center;
     }
 
@@ -211,44 +390,186 @@
     }
 
     .cart-item {
-      padding: 8px;
+      background: white;
+
+      margin: 8px auto;
+
+      padding: 12px;
+
+      border-radius: 12px;
+
+      max-width: 600px;
+
       font-size: 17px;
     }
 
     .cart-total {
-      font-size: 21px;
+      font-size: 22px;
+
       margin: 20px 0;
+
       font-weight: bold;
+
+      color: #7e5361;
     }
 
-    .order-btn {
+    .remove-btn {
       border: none;
-      background: #9b6877;
-      color: white;
-      padding: 14px 30px;
-      border-radius: 30px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 17px;
+
+      background: #ead5dc;
+
+      color: #634750;
+
+      padding: 5px 10px;
+
+      border-radius: 15px;
+
+      margin-left: 10px;
+
       cursor: pointer;
     }
 
-    /* MOBILE */
+    /* ================= ABOUT ================= */
+
+    #about {
+      background: white;
+
+      padding: 70px 20px;
+
+      text-align: center;
+    }
+
+    .about-box {
+      max-width: 800px;
+
+      margin: auto;
+    }
+
+    .about-box h2 {
+      font-size: 40px;
+
+      color: #3c2d33;
+
+      margin-bottom: 20px;
+    }
+
+    .about-box p {
+      font-family: Arial, sans-serif;
+
+      color: #6f5b62;
+
+      font-size: 17px;
+
+      line-height: 1.8;
+    }
+
+    /* ================= CONTACT ================= */
+
+    #contact {
+      text-align: center;
+
+      padding: 60px 20px;
+
+      background: #fff6f8;
+    }
+
+    #contact h2 {
+      font-size: 38px;
+
+      margin-bottom: 15px;
+    }
+
+    #contact p {
+      color: #705d64;
+
+      font-family: Arial, sans-serif;
+
+      margin-bottom: 20px;
+    }
+
+    .instagram-btn {
+      display: inline-block;
+
+      background: #9b6877;
+
+      color: white;
+
+      text-decoration: none;
+
+      padding: 13px 28px;
+
+      border-radius: 30px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #34272c;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 25px 15px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+    }
+
+    /* ================= MOBILE ================= */
+
     @media (max-width: 900px) {
+
       .products {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
       }
 
       .product-card img {
-        height: 240px;
+        height: 260px;
       }
 
-      .page-title {
-        font-size: 40px;
+      .hero-content h1 {
+        font-size: 46px;
       }
     }
 
     @media (max-width: 600px) {
+
+      header {
+        position: relative;
+      }
+
+      .logo {
+        font-size: 27px;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 15px;
+      }
+
+      #home {
+        min-height: 65vh;
+      }
+
+      .hero-content h1 {
+        font-size: 38px;
+        letter-spacing: 4px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+      }
+
       .products {
         grid-template-columns: 1fr;
         width: 90%;
@@ -258,344 +579,784 @@
         height: 360px;
       }
 
-      .page-title {
-        font-size: 38px;
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .logo {
-        font-size: 30px;
-      }
-
-      nav {
-        gap: 18px;
+      .about-box h2 {
+        font-size: 34px;
       }
     }
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
+
+  <!-- ================= HEADER ================= -->
+
   <header>
-    <div class="logo">ZYRAZIN</div>
+
+    <div class="logo">
+      ZYRAZIN
+    </div>
 
     <nav>
-      <a href="#">Home</a>
-      <a href="#necklaces">Shop</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#shop">
+        Shop
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </nav>
+
   </header>
 
 
-  <!-- NECKLACES -->
-  <section id="necklaces">
 
-    <h1 class="page-title">Necklaces</h1>
+  <!-- ================= HOME / BANNER ================= -->
 
-    <div class="products">
+  <section id="home">
 
-      <!-- CH01 -->
-      <div class="product-card">
-        <img src="product/CH01%20-%20Vintage%20Rose%20Necklace.PNG"
-             alt="Vintage Rose Necklace">
+    <div class="hero-content">
 
-        <div class="product-info">
-          <h2 class="product-name">Vintage Rose Necklace</h2>
-          <div class="price">₹220</div>
+      <h1>
+        ZYRAZIN
+      </h1>
 
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Vintage Rose Necklace',
-              '₹220',
-              'product/CH01%20-%20Vintage%20Rose%20Necklace.PNG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
+      <p>
+        Luxury Jewellery Collection
+      </p>
 
-
-      <!-- CH02 -->
-      <div class="product-card">
-        <img src="product/CH02%20-%20Red%20Butterfly%20Necklace.PNG"
-             alt="Red Butterfly Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Red Butterfly Necklace</h2>
-          <div class="price">₹200</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Red Butterfly Necklace',
-              '₹200',
-              'product/CH02%20-%20Red%20Butterfly%20Necklace.PNG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH03 -->
-      <div class="product-card">
-        <img src="product/CH03%20-%20Floral%20Vibes%20Necklace.PNG"
-             alt="Floral Vibes Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Floral Vibes Necklace</h2>
-          <div class="price">₹250</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Floral Vibes Necklace',
-              '₹250',
-              'product/CH03%20-%20Floral%20Vibes%20Necklace.PNG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH04 -->
-      <div class="product-card">
-        <img src="product/CH04%20-%20Bow%20%26%20Heart%20Necklace.PNG"
-             alt="Bow and Heart Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Bow & Heart Necklace</h2>
-          <div class="price">₹220</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Bow & Heart Necklace',
-              '₹220',
-              'product/CH04%20-%20Bow%20%26%20Heart%20Necklace.PNG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH05 -->
-      <div class="product-card">
-        <img src="product/CH05%20-%20Black%20Butterfly%20Necklace.PNG"
-             alt="Black Butterfly Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Black Butterfly Necklace</h2>
-          <div class="price">₹200</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Black Butterfly Necklace',
-              '₹200',
-              'product/CH05%20-%20Black%20Butterfly%20Necklace.PNG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH06 -->
-      <div class="product-card">
-        <img src="product/CH06%20-%20Golden%20Charm%20Necklace.PNG"
-             alt="Golden Charm Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Golden Charm Necklace</h2>
-          <div class="price">₹230</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Golden Charm Necklace',
-              '₹230',
-              'product/CH06%20-%20Golden%20Charm%20Necklace.PNG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH07 -->
-      <div class="product-card">
-        <img src="product/CH07%20-%20White%20Butterfly%20Necklace.JPG"
-             alt="White Butterfly Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">White Butterfly Necklace</h2>
-          <div class="price">₹220</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'White Butterfly Necklace',
-              '₹220',
-              'product/CH07%20-%20White%20Butterfly%20Necklace.JPG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH08 -->
-      <div class="product-card">
-        <img src="product/CH08%20-%20Emerald%20Stone%20Necklace.JPG"
-             alt="Emerald Stone Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Emerald Stone Necklace</h2>
-          <div class="price">₹250</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Emerald Stone Necklace',
-              '₹250',
-              'product/CH08%20-%20Emerald%20Stone%20Necklace.JPG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH09 -->
-      <div class="product-card">
-        <img src="product/CH09%20-%20Black%20Heart%20Necklace.JPG"
-             alt="Black Heart Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Black Heart Necklace</h2>
-          <div class="price">₹220</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Black Heart Necklace',
-              '₹220',
-              'product/CH09%20-%20Black%20Heart%20Necklace.JPG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH10 -->
-      <div class="product-card">
-        <img src="product/CH10%20-%20Angel%20Number%20Necklace.JPG"
-             alt="Angel Number Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Angel Number Necklace</h2>
-          <div class="price">₹200</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Angel Number Necklace',
-              '₹200',
-              'product/CH10%20-%20Angel%20Number%20Necklace.JPG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH11 -->
-      <div class="product-card">
-        <img src="product/CH11%20-%20Red%20Tulip%20Necklace.JPG"
-             alt="Red Tulip Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">Red Tulip Necklace</h2>
-          <div class="price">₹200</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'Red Tulip Necklace',
-              '₹200',
-              'product/CH11%20-%20Red%20Tulip%20Necklace.JPG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
-
-
-      <!-- CH12 -->
-      <div class="product-card">
-        <img src="product/CH12%20-%20White%20Flower%20Necklace.JPG"
-             alt="White Flower Necklace">
-
-        <div class="product-info">
-          <h2 class="product-name">White Flower Necklace</h2>
-          <div class="price">₹200</div>
-
-          <button class="view-btn"
-            onclick="viewProduct(
-              'White Flower Necklace',
-              '₹200',
-              'product/CH12%20-%20White%20Flower%20Necklace.JPG'
-            )">
-            View Product
-          </button>
-        </div>
-      </div>
+      <a
+        href="#shop"
+        class="hero-btn"
+      >
+        Explore Collection
+      </a>
 
     </div>
+
   </section>
 
 
-  <!-- PRODUCT VIEW POPUP -->
-  <div id="productModal" class="modal">
+
+  <!-- ================= CATEGORIES ================= -->
+
+  <section id="shop">
+
+    <div class="section-title">
+
+      <h2>
+        Shop By Category
+      </h2>
+
+      <p>
+        Discover something beautiful for every moment
+      </p>
+
+    </div>
+
+
+    <div class="categories">
+
+      <a
+        href="#necklaces"
+        class="category-card"
+      >
+
+        <div class="category-icon">
+          📿
+        </div>
+
+        <h3>
+          Necklaces
+        </h3>
+
+      </a>
+
+
+      <a
+        href="#necklaces"
+        class="category-card"
+      >
+
+        <div class="category-icon">
+          ✨
+        </div>
+
+        <h3>
+          Earrings
+        </h3>
+
+      </a>
+
+
+      <a
+        href="#necklaces"
+        class="category-card"
+      >
+
+        <div class="category-icon">
+          💎
+        </div>
+
+        <h3>
+          Bracelets
+        </h3>
+
+      </a>
+
+
+      <a
+        href="#necklaces"
+        class="category-card"
+      >
+
+        <div class="category-icon">
+          💍
+        </div>
+
+        <h3>
+          Rings
+        </h3>
+
+      </a>
+
+
+      <a
+        href="#necklaces"
+        class="category-card"
+      >
+
+        <div class="category-icon">
+          🌸
+        </div>
+
+        <h3>
+          Bangles
+        </h3>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= NECKLACES ================= -->
+
+  <section id="necklaces">
+
+    <div class="section-title">
+
+      <h2>
+        Necklaces
+      </h2>
+
+      <p>
+        Elegant pieces selected for you
+      </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+      <!-- CH01 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH01%20-%20Vintage%20Rose%20Necklace.PNG"
+          alt="Vintage Rose Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Vintage Rose Necklace
+          </h3>
+
+          <div class="price">
+            ₹220
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Vintage Rose Necklace',
+              220,
+              'product/CH01%20-%20Vintage%20Rose%20Necklace.PNG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH02 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH02%20-%20Red%20Butterfly%20Necklace.PNG"
+          alt="Red Butterfly Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Red Butterfly Necklace
+          </h3>
+
+          <div class="price">
+            ₹200
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Red Butterfly Necklace',
+              200,
+              'product/CH02%20-%20Red%20Butterfly%20Necklace.PNG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH03 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH03%20-%20Floral%20Vibes%20Necklace.PNG"
+          alt="Floral Vibes Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Floral Vibes Necklace
+          </h3>
+
+          <div class="price">
+            ₹250
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Floral Vibes Necklace',
+              250,
+              'product/CH03%20-%20Floral%20Vibes%20Necklace.PNG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH04 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH04%20-%20Bow%20%26%20Heart%20Necklace.PNG"
+          alt="Bow Heart Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Bow & Heart Necklace
+          </h3>
+
+          <div class="price">
+            ₹220
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Bow & Heart Necklace',
+              220,
+              'product/CH04%20-%20Bow%20%26%20Heart%20Necklace.PNG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH05 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH05%20-%20Black%20Butterfly%20Necklace.PNG"
+          alt="Black Butterfly Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Black Butterfly Necklace
+          </h3>
+
+          <div class="price">
+            ₹200
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Black Butterfly Necklace',
+              200,
+              'product/CH05%20-%20Black%20Butterfly%20Necklace.PNG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH06 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH06%20-%20Golden%20Charm%20Necklace.PNG"
+          alt="Golden Charm Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Golden Charm Necklace
+          </h3>
+
+          <div class="price">
+            ₹230
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Golden Charm Necklace',
+              230,
+              'product/CH06%20-%20Golden%20Charm%20Necklace.PNG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH07 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH07%20-%20White%20Butterfly%20Necklace.JPG"
+          alt="White Butterfly Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            White Butterfly Necklace
+          </h3>
+
+          <div class="price">
+            ₹220
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'White Butterfly Necklace',
+              220,
+              'product/CH07%20-%20White%20Butterfly%20Necklace.JPG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH08 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH08%20-%20Emerald%20Stone%20Necklace.JPG"
+          alt="Emerald Stone Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Emerald Stone Necklace
+          </h3>
+
+          <div class="price">
+            ₹250
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Emerald Stone Necklace',
+              250,
+              'product/CH08%20-%20Emerald%20Stone%20Necklace.JPG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH09 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH09%20-%20Black%20Heart%20Necklace.JPG"
+          alt="Black Heart Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Black Heart Necklace
+          </h3>
+
+          <div class="price">
+            ₹220
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Black Heart Necklace',
+              220,
+              'product/CH09%20-%20Black%20Heart%20Necklace.JPG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH10 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH10%20-%20Angel%20Number%20Necklace.JPG"
+          alt="Angel Number Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Angel Number Necklace
+          </h3>
+
+          <div class="price">
+            ₹200
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Angel Number Necklace',
+              200,
+              'product/CH10%20-%20Angel%20Number%20Necklace.JPG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH11 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH11%20-%20Red%20Tulip%20Necklace.JPG"
+          alt="Red Tulip Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Red Tulip Necklace
+          </h3>
+
+          <div class="price">
+            ₹200
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'Red Tulip Necklace',
+              200,
+              'product/CH11%20-%20Red%20Tulip%20Necklace.JPG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CH12 -->
+
+      <div class="product-card">
+
+        <img
+          src="product/CH12%20-%20White%20Flower%20Necklace.JPG"
+          alt="White Flower Necklace"
+        >
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            White Flower Necklace
+          </h3>
+
+          <div class="price">
+            ₹200
+          </div>
+
+          <button
+            class="view-btn"
+            onclick="viewProduct(
+              'White Flower Necklace',
+              200,
+              'product/CH12%20-%20White%20Flower%20Necklace.JPG'
+            )"
+          >
+            View Product
+          </button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= CART ================= -->
+
+  <section id="cart">
+
+    <div class="cart-section">
+
+      <h2>
+        🛍️ Your Cart
+      </h2>
+
+      <div id="cartItems">
+
+        <p>
+          Your cart is empty.
+        </p>
+
+      </div>
+
+      <div class="cart-total">
+
+        Total: ₹<span id="cartTotal">0</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about">
+
+    <div class="about-box">
+
+      <h2>
+        About Zyrazin
+      </h2>
+
+      <p>
+        Zyrazin is a jewellery brand created for women
+        who love elegant, feminine and timeless pieces.
+        Each piece is carefully selected to add a gentle
+        touch of beauty to your everyday style.
+      </p>
+
+      <br>
+
+      <p>
+        Simple. Elegant. Timeless.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section id="contact">
+
+    <h2>
+      Contact Us
+    </h2>
+
+    <p>
+      For orders and enquiries, connect with us on Instagram.
+    </p>
+
+    <a
+      href="#"
+      class="instagram-btn"
+    >
+      Instagram
+    </a>
+
+  </section>
+
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    © 2026 Zyrazin Jewellery.
+    All rights reserved.
+
+  </footer>
+
+
+
+  <!-- ================= PRODUCT MODAL ================= -->
+
+  <div
+    id="productModal"
+    class="modal"
+  >
 
     <div class="modal-content">
 
-      <button class="close-btn" onclick="closeProduct()">×</button>
+      <button
+        class="close-btn"
+        onclick="closeProduct()"
+      >
+        ×
+      </button>
 
-      <img id="modalImage" src="" alt="Product">
+      <img
+        id="modalImage"
+        src=""
+        alt="Product"
+      >
 
       <div class="modal-info">
 
-        <h2 id="modalName"></h2>
+        <h2 id="modalName">
+        </h2>
 
-        <div class="modal-price" id="modalPrice"></div>
+        <div
+          class="modal-price"
+          id="modalPrice"
+        >
+        </div>
 
-        <button class="order-btn" onclick="addToCart()">
+        <button
+          class="add-cart-btn"
+          onclick="addToCart()"
+        >
           🛍️ Add to Cart
         </button>
 
       </div>
 
     </div>
+
   </div>
 
 
-  <!-- CART -->
-  <section class="cart-section">
 
-    <h2>🛍️ Your Cart</h2>
+  <!-- ================= JAVASCRIPT ================= -->
 
-    <div id="cartItems">
-      <p>Your cart is empty.</p>
-    </div>
-
-    <div class="cart-total">
-      Total: ₹<span id="cartTotal">0</span>
-    </div>
-
-    <button class="order-btn" onclick="sendOrder()">
-      Send Order
-    </button>
-
-  </section>
-
-
-  <!-- JAVASCRIPT -->
   <script>
 
     let selectedProduct = null;
@@ -604,58 +1365,106 @@
 
 
     /* VIEW PRODUCT */
-    function viewProduct(name, price, image) {
+
+    function viewProduct(
+      name,
+      price,
+      image
+    ) {
 
       selectedProduct = {
+
         name: name,
-        price: parseInt(price.replace("₹", "")),
+
+        price: price,
+
         image: image
+
       };
 
-      document.getElementById("modalName").innerText = name;
 
-      document.getElementById("modalPrice").innerText = price;
+      document
+        .getElementById("modalName")
+        .innerText = name;
 
-      document.getElementById("modalImage").src = image;
 
-      document.getElementById("productModal").style.display = "flex";
+      document
+        .getElementById("modalPrice")
+        .innerText = "₹" + price;
+
+
+      document
+        .getElementById("modalImage")
+        .src = image;
+
+
+      document
+        .getElementById("productModal")
+        .style.display = "flex";
+
     }
+
 
 
     /* CLOSE PRODUCT */
+
     function closeProduct() {
 
-      document.getElementById("productModal").style.display = "none";
+      document
+        .getElementById("productModal")
+        .style.display = "none";
+
     }
+
 
 
     /* ADD TO CART */
+
     function addToCart() {
 
-      if (!selectedProduct) return;
+      if (!selectedProduct) {
+        return;
+      }
+
 
       cart.push(selectedProduct);
 
+
       updateCart();
 
+
       closeProduct();
+
+
+      alert(
+        selectedProduct.name +
+        " added to your cart!"
+      );
+
     }
 
 
+
     /* UPDATE CART */
+
     function updateCart() {
 
-      const cartItems = document.getElementById("cartItems");
+      const cartItems =
+        document.getElementById("cartItems");
 
-      const cartTotal = document.getElementById("cartTotal");
+      const cartTotal =
+        document.getElementById("cartTotal");
+
 
       if (cart.length === 0) {
 
-        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+        cartItems.innerHTML =
+          "<p>Your cart is empty.</p>";
 
         cartTotal.innerText = "0";
 
         return;
+
       }
 
 
@@ -664,85 +1473,73 @@
       let html = "";
 
 
-      cart.forEach((item, index) => {
+      cart.forEach(
+        function(item, index) {
 
-        total += item.price;
+          total += item.price;
 
-        html += `
-          <div class="cart-item">
-            ${item.name} - ₹${item.price}
-          </div>
-        `;
 
-      });
+          html += `
+
+            <div class="cart-item">
+
+              ${item.name}
+              -
+              ₹${item.price}
+
+              <button
+                class="remove-btn"
+                onclick="removeFromCart(${index})"
+              >
+                Remove
+              </button>
+
+            </div>
+
+          `;
+
+        }
+      );
 
 
       cartItems.innerHTML = html;
 
       cartTotal.innerText = total;
+
     }
 
 
-    /* SEND ORDER */
-    function sendOrder() {
 
-      if (cart.length === 0) {
+    /* REMOVE FROM CART */
 
-        alert("Your cart is empty.");
+    function removeFromCart(index) {
 
-        return;
-      }
+      cart.splice(index, 1);
 
+      updateCart();
 
-      let message = "Hello Zyrazin!%0A%0AI would like to order:%0A%0A";
-
-      let total = 0;
-
-
-      cart.forEach((item, index) => {
-
-        message +=
-          (index + 1) +
-          ". " +
-          item.name +
-          " - ₹" +
-          item.price +
-          "%0A";
-
-        total += item.price;
-      });
-
-
-      message += "%0ATotal: ₹" + total;
-
-
-      /*
-        Replace the number below with your
-        WhatsApp number if you want WhatsApp ordering.
-      */
-
-      const phone = "91XXXXXXXXXX";
-
-
-      window.open(
-        "https://wa.me/" + phone + "?text=" + message,
-        "_blank"
-      );
     }
 
 
-    /* CLOSE WHEN CLICKING OUTSIDE */
+
+    /* CLOSE MODAL OUTSIDE */
+
     window.onclick = function(event) {
 
-      const modal = document.getElementById("productModal");
+      const modal =
+        document.getElementById("productModal");
+
 
       if (event.target === modal) {
 
         closeProduct();
+
       }
+
     };
 
   </script>
+
 
 </body>
 </html>
