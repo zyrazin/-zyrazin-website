@@ -33,33 +33,25 @@ header {
 }
 
 .header-inner {
-    max-width: 1150px;
+    max-width: 1100px;
     margin: auto;
-    min-height: 105px;
-    padding: 10px 20px;
+    min-height: 82px;
+    padding: 12px 22px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
 }
 
-/* ZYRAZIN LOGO */
-
-.logo-area {
-    display: flex;
-    align-items: center;
+.logo {
     text-decoration: none;
+    color: #9d6879;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    white-space: nowrap;
 }
-
-.site-logo {
-    width: 105px;
-    height: 82px;
-    object-fit: contain;
-    display: block;
-}
-
-/* NAVIGATION */
 
 nav {
     display: flex;
@@ -77,47 +69,16 @@ nav a:hover {
     color: #a56d7e;
 }
 
-/* CART HEADER BUTTON */
-
-.header-cart {
-    position: relative;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 25px;
-    color: #49383e;
-}
-
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-
-    min-width: 19px;
-    height: 19px;
-
-    border-radius: 50%;
-    background: #a66c7d;
-    color: white;
-
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* ================= PAGE TITLE ================= */
 
 .page-title {
     text-align: center;
-    padding: 42px 20px 28px;
+    padding: 40px 20px 25px;
 }
 
 .page-title h1 {
     margin: 0;
-    font-size: 42px;
+    font-size: 40px;
     color: #30252a;
 }
 
@@ -132,11 +93,11 @@ nav a:hover {
 .products {
     max-width: 1050px;
     margin: auto;
-    padding: 5px 20px 65px;
+    padding: 10px 22px 50px;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 22px;
 }
 
 .product-card {
@@ -145,60 +106,44 @@ nav a:hover {
     border-radius: 18px;
     overflow: hidden;
 
-    box-shadow: 0 7px 24px rgba(80, 45, 55, 0.06);
-
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(80, 45, 55, 0.11);
+    box-shadow: 0 7px 22px rgba(80,45,55,0.06);
 }
 
 .product-image {
     width: 100%;
-    height: 310px;
+    height: 250px;
     object-fit: cover;
     display: block;
     background: #f8eef1;
 }
 
 .product-info {
-    padding: 16px;
+    padding: 15px;
 }
 
 .product-name {
     margin: 0 0 7px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.25;
 }
 
-.product-code {
-    margin: 0 0 7px;
-    color: #9a858c;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    letter-spacing: 1px;
+.price {
+    margin: 0 0 12px;
+    font-size: 19px;
+    color: #9b6275;
+    font-weight: bold;
 }
 
 .stock {
-    margin: 0 0 8px;
-    color: #a86b7b;
+    color: #8f596b;
     font-size: 13px;
-}
-
-.price {
-    margin: 0 0 13px;
-    font-size: 20px;
-    color: #9b6275;
-    font-weight: bold;
+    margin-bottom: 12px;
 }
 
 .view-btn {
     width: 100%;
     border: none;
-    border-radius: 22px;
+    border-radius: 24px;
     padding: 11px;
 
     background: #a66c7d;
@@ -218,38 +163,37 @@ nav a:hover {
 
 .cart-section {
     max-width: 1050px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
+    margin: 0 auto 50px;
+    padding: 20px 22px;
 }
 
 .cart-box {
     background: #fff;
     border: 1px solid #ead9de;
-    border-radius: 24px;
-    padding: 30px;
+    border-radius: 22px;
+    padding: 25px;
 
-    box-shadow: 0 8px 25px rgba(80, 45, 55, 0.06);
+    box-shadow: 0 7px 22px rgba(80,45,55,0.06);
 }
 
 .cart-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 27px;
     margin: 0 0 20px;
 }
 
 .cart-empty {
     text-align: center;
     color: #8d777e;
-    font-size: 17px;
 }
 
 .cart-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 12px;
 
-    padding: 15px 0;
+    padding: 13px 0;
     border-bottom: 1px solid #eee0e4;
 }
 
@@ -257,10 +201,16 @@ nav a:hover {
     font-size: 16px;
 }
 
+.cart-item-code {
+    color: #9a7a83;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
 .cart-item-price {
-    margin-top: 4px;
     color: #9b6275;
     font-weight: bold;
+    margin-top: 4px;
 }
 
 .remove-btn {
@@ -272,30 +222,23 @@ nav a:hover {
 
 .cart-total {
     text-align: center;
-    margin: 25px 0;
-    font-size: 22px;
+    margin: 22px 0;
+    font-size: 21px;
     font-weight: bold;
 }
 
-/* CART BUTTONS */
-
-.order-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
 .checkout-btn {
+    display: block;
+    width: 100%;
     border: none;
     border-radius: 25px;
-    padding: 13px 28px;
+    padding: 14px;
 
     background: #a66c7d;
     color: white;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
+    font-size: 17px;
 
     cursor: pointer;
 }
@@ -312,7 +255,7 @@ nav a:hover {
     position: fixed;
     inset: 0;
 
-    background: rgba(35, 25, 29, 0.65);
+    background: rgba(35,25,29,0.65);
 
     z-index: 2000;
 
@@ -329,7 +272,7 @@ nav a:hover {
     overflow-y: auto;
 
     border-radius: 24px;
-    padding: 22px;
+    padding: 24px;
 
     position: relative;
 }
@@ -344,9 +287,11 @@ nav a:hover {
     color: #654b54;
 }
 
+/* ================= PRODUCT MODAL ================= */
+
 .modal-image {
     width: 100%;
-    max-height: 420px;
+    max-height: 400px;
     object-fit: cover;
     border-radius: 17px;
 }
@@ -364,17 +309,17 @@ nav a:hover {
 
 .add-cart-btn {
     width: 100%;
-    margin-top: 18px;
+    margin-top: 17px;
 
     border: none;
-    border-radius: 24px;
-    padding: 13px;
+    border-radius: 25px;
+    padding: 14px;
 
     background: #a66c7d;
     color: white;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
+    font-size: 17px;
 
     cursor: pointer;
 }
@@ -383,29 +328,27 @@ nav a:hover {
 
 .checkout-title {
     text-align: center;
-    margin: 5px 0 20px;
     font-size: 27px;
+    margin: 5px 0 20px;
 }
 
 .form-group {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 6px;
-    color: #5c474e;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
+    padding: 12px 13px;
 
     border: 1px solid #dfcbd1;
-    border-radius: 12px;
-
-    padding: 12px;
+    border-radius: 10px;
 
     font-family: Georgia, "Times New Roman", serif;
     font-size: 15px;
@@ -419,22 +362,25 @@ nav a:hover {
 }
 
 .form-group textarea {
-    min-height: 85px;
+    min-height: 80px;
     resize: vertical;
 }
 
-.checkout-total {
-    text-align: center;
-    font-size: 21px;
-    font-weight: bold;
-    margin: 20px 0;
-    color: #49383e;
+.checkout-summary {
+    background: #fff5f7;
+    border-radius: 12px;
+    padding: 14px;
+    margin: 18px 0;
 }
 
-.pay-now-btn {
+.checkout-summary strong {
+    color: #9b6275;
+}
+
+.payment-btn {
     width: 100%;
     border: none;
-    border-radius: 24px;
+    border-radius: 25px;
     padding: 14px;
 
     background: #a66c7d;
@@ -446,36 +392,39 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* ================= QR ================= */
+/* ================= QR PAYMENT ================= */
 
 .qr-title {
     text-align: center;
-    font-size: 24px;
+    font-size: 25px;
+    margin-top: 5px;
 }
 
 .qr-image {
     width: 100%;
-    max-width: 350px;
-
+    max-width: 300px;
     display: block;
     margin: 15px auto;
-
     border-radius: 12px;
 }
 
-.upi-text {
+.payment-note {
     text-align: center;
-    color: #59464d;
+    color: #77636a;
     font-size: 14px;
+    line-height: 1.5;
+}
+
+.upi-id {
+    text-align: center;
+    margin: 12px 0;
 }
 
 .paid-btn {
     width: 100%;
-
     border: none;
-    border-radius: 24px;
-
-    padding: 14px;
+    border-radius: 25px;
+    padding: 13px;
 
     background: #a66c7d;
     color: white;
@@ -486,47 +435,77 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* ================= SUCCESS ================= */
+/* ================= CONFIRMATION ================= */
 
-.success-box {
+.confirm-title {
     text-align: center;
+    font-size: 27px;
+    color: #8f596b;
+    margin: 5px 0 12px;
 }
 
-.success-icon {
-    font-size: 45px;
+.confirm-text {
+    text-align: center;
+    color: #65545a;
+    line-height: 1.55;
+    font-size: 15px;
 }
 
-.success-box h2 {
-    margin: 10px 0;
+.order-message {
+    background: #fff5f7;
+    border: 1px solid #ead9de;
+    border-radius: 12px;
+
+    padding: 14px;
+    margin: 18px 0;
+
+    white-space: pre-line;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-.success-box p {
-    color: #705d64;
-    line-height: 1.6;
+.copy-btn,
+.instagram-btn {
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding: 13px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+
+    cursor: pointer;
+    margin-top: 9px;
 }
 
-.instagram-final-btn {
-    display: inline-block;
+.copy-btn {
+    background: #ead1d8;
+    color: #49383e;
+}
 
-    text-decoration: none;
-
-    border-radius: 24px;
-    padding: 13px 25px;
-
+.instagram-btn {
     background: #a66c7d;
     color: white;
+}
 
-    font-size: 16px;
+.instagram-btn:hover {
+    background: #8f596b;
+}
+
+.small-note {
+    text-align: center;
+    font-size: 13px;
+    color: #8b737b;
+    margin-top: 13px;
+    line-height: 1.5;
 }
 
 /* ================= FOOTER ================= */
 
 footer {
     text-align: center;
-    padding: 30px 20px;
-
+    padding: 28px 20px;
     border-top: 1px solid #ead9de;
-
     color: #8b737b;
 }
 
@@ -535,14 +514,13 @@ footer {
 @media (max-width: 700px) {
 
     .header-inner {
-        min-height: 88px;
-        padding: 8px 12px;
-        gap: 10px;
+        min-height: 70px;
+        padding: 12px 14px;
     }
 
-    .site-logo {
-        width: 82px;
-        height: 68px;
+    .logo {
+        font-size: 22px;
+        letter-spacing: 4px;
     }
 
     nav {
@@ -553,16 +531,12 @@ footer {
         font-size: 13px;
     }
 
-    .header-cart {
-        font-size: 22px;
-    }
-
     .page-title {
-        padding: 32px 15px 23px;
+        padding-top: 30px;
     }
 
     .page-title h1 {
-        font-size: 35px;
+        font-size: 34px;
     }
 
     .products {
@@ -573,23 +547,15 @@ footer {
     }
 
     .product-image {
-        height: 220px;
+        height: 210px;
     }
 
     .product-info {
-        padding: 11px;
+        padding: 12px;
     }
 
     .product-name {
         font-size: 16px;
-    }
-
-    .product-code {
-        font-size: 10px;
-    }
-
-    .stock {
-        font-size: 11px;
     }
 
     .price {
@@ -598,37 +564,22 @@ footer {
 
     .view-btn {
         font-size: 13px;
-        padding: 10px 5px;
-    }
-
-    .cart-section {
-        padding: 0 12px;
-    }
-
-    .cart-box {
-        padding: 22px 15px;
+        padding: 10px;
     }
 }
 
-/* VERY SMALL PHONES */
+@media (max-width: 480px) {
 
-@media (max-width: 390px) {
-
-    .site-logo {
-        width: 70px;
-        height: 60px;
+    .header-inner {
+        flex-direction: column;
     }
 
     nav {
-        gap: 8px;
-    }
-
-    nav a {
-        font-size: 11px;
+        gap: 16px;
     }
 
     .products {
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .product-image {
@@ -636,19 +587,11 @@ footer {
     }
 
     .product-name {
-        font-size: 14px;
-    }
-
-    .price {
         font-size: 15px;
     }
 
-    .stock {
-        font-size: 10px;
-    }
-
-    .view-btn {
-        font-size: 11px;
+    .cart-box {
+        padding: 20px 15px;
     }
 }
 </style>
@@ -659,46 +602,20 @@ footer {
 <!-- ================= HEADER ================= -->
 
 <header>
-
     <div class="header-inner">
 
-        <a href="index.html" class="logo-area">
-
-            <img
-                src="zyrazin-logo.png.PNG"
-                alt="Zyrazin"
-                class="site-logo"
-            >
-
+        <a href="index.html" class="logo">
+            ZYRAZIN
         </a>
 
         <nav>
-
             <a href="index.html">Home</a>
-
-            <a href="necklaces.html">Shop</a>
-
+            <a href="necklaces.html">Necklaces</a>
             <a href="index.html#about">About</a>
-
-            <button
-                class="header-cart"
-                onclick="openCart()"
-                aria-label="Cart">
-
-                🛍️
-
-                <span
-                    class="cart-count"
-                    id="headerCartCount">
-                    0
-                </span>
-
-            </button>
-
+            <a href="index.html#contact">Contact</a>
         </nav>
 
     </div>
-
 </header>
 
 
@@ -708,24 +625,19 @@ footer {
 
     <h1>Necklaces</h1>
 
-    <p>Find your perfect piece.</p>
+    <p>Elegant pieces selected for you</p>
 
 </section>
 
 
 <!-- ================= PRODUCTS ================= -->
 
-<section
-    class="products"
-    id="products">
-</section>
+<section class="products" id="products"></section>
 
 
 <!-- ================= CART ================= -->
 
-<section
-    class="cart-section"
-    id="cartSection">
+<section class="cart-section">
 
     <div class="cart-box">
 
@@ -736,22 +648,14 @@ footer {
         <div id="cartItems"></div>
 
         <div class="cart-total">
-
             Total: ₹<span id="cartTotal">0</span>
-
         </div>
 
-        <div class="order-buttons">
-
-            <button
-                class="checkout-btn"
-                onclick="openCheckout()">
-
-                Proceed to Checkout
-
-            </button>
-
-        </div>
+        <button
+            class="checkout-btn"
+            onclick="openCheckout()">
+            Proceed to Checkout
+        </button>
 
     </div>
 
@@ -760,40 +664,28 @@ footer {
 
 <!-- ================= PRODUCT MODAL ================= -->
 
-<div
-    class="modal"
-    id="productModal">
+<div class="modal" id="productModal">
 
     <div class="modal-content">
 
-        <span
-            class="close"
-            onclick="closeProduct()">
-            ×
-        </span>
+        <span class="close"
+              onclick="closeProduct()">×</span>
 
-        <img
-            id="modalImage"
-            class="modal-image"
-            src=""
-            alt="Product">
+        <img id="modalImage"
+             class="modal-image"
+             src=""
+             alt="Product">
 
-        <h2
-            id="modalTitle"
-            class="modal-title">
-        </h2>
+        <h2 id="modalTitle"
+            class="modal-title"></h2>
 
-        <div
-            id="modalPrice"
-            class="modal-price">
-        </div>
+        <div id="modalPrice"
+             class="modal-price"></div>
 
         <button
             class="add-cart-btn"
             onclick="addSelectedProduct()">
-
             Add to Cart
-
         </button>
 
     </div>
@@ -803,17 +695,12 @@ footer {
 
 <!-- ================= CHECKOUT MODAL ================= -->
 
-<div
-    class="modal"
-    id="checkoutModal">
+<div class="modal" id="checkoutModal">
 
     <div class="modal-content">
 
-        <span
-            class="close"
-            onclick="closeCheckout()">
-            ×
-        </span>
+        <span class="close"
+              onclick="closeCheckout()">×</span>
 
         <h2 class="checkout-title">
             Your Details
@@ -821,9 +708,7 @@ footer {
 
         <div class="form-group">
 
-            <label>
-                Full Name
-            </label>
+            <label>Full Name</label>
 
             <input
                 type="text"
@@ -835,59 +720,55 @@ footer {
 
         <div class="form-group">
 
-            <label>
-                Phone Number
-            </label>
+            <label>Phone Number</label>
 
             <input
                 type="tel"
                 id="customerPhone"
-                placeholder="Enter phone number">
+                placeholder="Enter your phone number">
 
         </div>
 
 
         <div class="form-group">
 
-            <label>
-                Address
-            </label>
+            <label>Address</label>
 
             <textarea
                 id="customerAddress"
-                placeholder="House name, place, district">
-            </textarea>
+                placeholder="Enter your full address"></textarea>
 
         </div>
 
 
         <div class="form-group">
 
-            <label>
-                PIN Code
-            </label>
+            <label>PIN Code</label>
 
             <input
                 type="text"
                 id="customerPin"
-                maxlength="6"
                 placeholder="Enter PIN code">
 
         </div>
 
 
-        <div class="checkout-total">
+        <div class="checkout-summary">
 
-            Total: ₹<span id="checkoutTotal">0</span>
+            <strong>Order Total</strong>
+
+            <div style="margin-top:7px;">
+                ₹<span id="checkoutTotal">0</span>
+            </div>
 
         </div>
 
 
         <button
-            class="pay-now-btn"
-            onclick="paymentNow()">
+            class="payment-btn"
+            onclick="continueToPayment()">
 
-            Pay Now
+            Continue to Payment
 
         </button>
 
@@ -896,26 +777,21 @@ footer {
 </div>
 
 
-<!-- ================= PAYMENT QR MODAL ================= -->
+<!-- ================= PAYMENT MODAL ================= -->
 
-<div
-    class="modal"
-    id="qrModal">
+<div class="modal" id="paymentModal">
 
     <div class="modal-content">
 
-        <span
-            class="close"
-            onclick="closeQR()">
-            ×
-        </span>
+        <span class="close"
+              onclick="closePayment()">×</span>
 
         <h2 class="qr-title">
-            Pay via UPI
+            Complete Your Payment
         </h2>
 
-        <p style="text-align:center;">
-            Scan the QR code below to complete your payment.
+        <p class="payment-note">
+            Please scan the QR code below and complete your payment.
         </p>
 
         <img
@@ -923,7 +799,7 @@ footer {
             class="qr-image"
             alt="Zyrazin Payment QR">
 
-        <p class="upi-text">
+        <div class="upi-id">
 
             UPI ID:<br>
 
@@ -931,13 +807,17 @@ footer {
                 jasiyajunaid2002-1@oksbi
             </strong>
 
+        </div>
+
+        <p class="payment-note">
+            After completing the payment, tap the button below.
         </p>
 
         <button
             class="paid-btn"
-            onclick="confirmPayment()">
+            onclick="paymentCompleted()">
 
-            I Have Paid — Confirm Order
+            I Have Completed Payment
 
         </button>
 
@@ -946,46 +826,56 @@ footer {
 </div>
 
 
-<!-- ================= SUCCESS MODAL ================= -->
+<!-- ================= CONFIRMATION MODAL ================= -->
 
-<div
-    class="modal"
-    id="successModal">
+<div class="modal" id="confirmationModal">
 
     <div class="modal-content">
 
-        <span
-            class="close"
-            onclick="closeSuccess()">
-            ×
-        </span>
+        <h2 class="confirm-title">
+            Order Ready 💞
+        </h2>
 
-        <div class="success-box">
+        <p class="confirm-text">
 
-            <div class="success-icon">
-                ✓
-            </div>
+            Thank you for shopping with Zyrazin! 🧡<br>
 
-            <h2>
-                Order Details Ready
-            </h2>
+            Your order details are ready.
 
-            <p>
-                Your order details have been prepared.
-                Please send them to Zyrazin on Instagram
-                to complete your order.
-            </p>
+        </p>
 
-            <a
-                href="https://www.instagram.com/zyrazin_/"
-                target="_blank"
-                class="instagram-final-btn">
 
-                Instagram
-
-            </a>
-
+        <div
+            class="order-message"
+            id="orderMessage">
         </div>
+
+
+        <button
+            class="copy-btn"
+            onclick="copyOrderMessage()">
+
+            📋 Copy Order Details
+
+        </button>
+
+
+        <button
+            class="instagram-btn"
+            onclick="openInstagram()">
+
+            Instagram
+
+        </button>
+
+
+        <p class="small-note">
+
+            Tap <strong>Copy Order Details</strong>, then open
+            Zyrazin Instagram and send the copied message to us
+            to confirm your order.
+
+        </p>
 
     </div>
 
@@ -1003,9 +893,9 @@ footer {
 
 <script>
 
-/* =====================================================
+/* =========================================================
    PRODUCTS
-===================================================== */
+========================================================= */
 
 const products = [
 
@@ -1013,96 +903,107 @@ const products = [
         code: "CH01",
         name: "Vintage Rose Necklace",
         price: 220,
-        image: "product/CH01 - Vintage Rose Necklace.PNG"
+        image: "product/CH01 - Vintage Rose Necklace.PNG",
+        stock: 1
     },
 
     {
         code: "CH02",
         name: "Red Butterfly Necklace",
         price: 220,
-        image: "product/CH02 - Red Butterfly Necklace.PNG"
+        image: "product/CH02 - Red Butterfly Necklace.PNG",
+        stock: 1
     },
 
     {
         code: "CH03",
         name: "Floral Vibes Necklace",
         price: 220,
-        image: "product/CH03 - Floral Vibes Necklace.PNG"
+        image: "product/CH03 - Floral Vibes Necklace.PNG",
+        stock: 1
     },
 
     {
         code: "CH04",
         name: "Bow & Heart Necklace",
         price: 220,
-        image: "product/CH04 - Bow & Heart Necklace.PNG"
+        image: "product/CH04 - Bow & Heart Necklace.PNG",
+        stock: 1
     },
 
     {
         code: "CH05",
         name: "Black Butterfly Necklace",
         price: 220,
-        image: "product/CH05 - Black Butterfly Necklace.PNG"
+        image: "product/CH05 - Black Butterfly Necklace.PNG",
+        stock: 1
     },
 
     {
         code: "CH06",
         name: "Golden Charm Necklace",
         price: 220,
-        image: "product/CH06 - Golden Charm Necklace.PNG"
+        image: "product/CH06 - Golden Charm Necklace.PNG",
+        stock: 1
     },
 
     {
         code: "CH07",
         name: "White Butterfly Necklace",
         price: 220,
-        image: "product/CH07 - White Butterfly Necklace.JPG"
+        image: "product/CH07 - White Butterfly Necklace.JPG",
+        stock: 1
     },
 
     {
         code: "CH08",
         name: "Emerald Stone Necklace",
         price: 220,
-        image: "product/CH08 - Emerald Stone Necklace.JPG"
+        image: "product/CH08 - Emerald Stone Necklace.JPG",
+        stock: 1
     },
 
     {
         code: "CH09",
         name: "Black Heart Necklace",
         price: 220,
-        image: "product/CH09 - Black Heart Necklace.JPG"
+        image: "product/CH09 - Black Heart Necklace.JPG",
+        stock: 1
     },
 
     {
         code: "CH10",
         name: "Angel Number Necklace",
         price: 220,
-        image: "product/CH10 - Angel Number Necklace.JPG"
+        image: "product/CH10 - Angel Number Necklace.JPG",
+        stock: 1
     },
 
     {
         code: "CH11",
         name: "Red Tulip Necklace",
         price: 220,
-        image: "product/CH11 - Red Tulip Necklace.JPG"
+        image: "product/CH11 - Red Tulip Necklace.JPG",
+        stock: 1
     },
 
     {
         code: "CH12",
         name: "White Flower Necklace",
         price: 220,
-        image: "product/CH12 - White Flower Necklace.JPG"
+        image: "product/CH12 - White Flower Necklace.JPG",
+        stock: 1
     }
 
 ];
 
 
-/* =====================================================
+/* =========================================================
    SHOW PRODUCTS
-===================================================== */
+========================================================= */
 
 const productsContainer =
     document.getElementById("products");
-
 
 products.forEach((product, index) => {
 
@@ -1122,17 +1023,15 @@ products.forEach((product, index) => {
                     ${product.name}
                 </h2>
 
-                <p class="product-code">
-                    ${product.code}
-                </p>
-
-                <p class="stock">
-                    Only 1 piece available
-                </p>
-
                 <p class="price">
                     ₹${product.price}
                 </p>
+
+                <div class="stock">
+                    ${product.stock === 1
+                        ? "1 piece left"
+                        : product.stock + " pieces left"}
+                </div>
 
                 <button
                     class="view-btn"
@@ -1151,12 +1050,11 @@ products.forEach((product, index) => {
 });
 
 
-/* =====================================================
+/* =========================================================
    PRODUCT VIEW
-===================================================== */
+========================================================= */
 
 let selectedProduct = null;
-
 
 function viewProduct(index) {
 
@@ -1183,37 +1081,31 @@ function closeProduct() {
 }
 
 
-/* =====================================================
+/* =========================================================
    CART
-===================================================== */
+========================================================= */
 
 let cart = [];
 
 
 function addSelectedProduct() {
 
-    if (!selectedProduct) {
-        return;
-    }
+    if (!selectedProduct) return;
 
+    /*
+       Only one piece is available.
+       Prevent adding the same product twice.
+    */
 
-    /* ONE PIECE ONLY */
+    const alreadyInCart =
+        cart.some(item => item.code === selectedProduct.code);
 
-    const alreadyAdded =
-        cart.some(
-            item => item.code === selectedProduct.code
-        );
+    if (alreadyInCart) {
 
-
-    if (alreadyAdded) {
-
-        alert(
-            "Only 1 piece is available for this product."
-        );
+        alert("Only 1 piece is available for this product.");
 
         return;
     }
-
 
     cart.push(selectedProduct);
 
@@ -1241,23 +1133,13 @@ function updateCart() {
     const cartTotal =
         document.getElementById("cartTotal");
 
-    const headerCount =
-        document.getElementById("headerCartCount");
-
-
-    headerCount.textContent = cart.length;
-
 
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
-
             <p class="cart-empty">
-
                 Your cart is empty.
-
             </p>
-
         `;
 
         cartTotal.textContent = "0";
@@ -1275,7 +1157,6 @@ function updateCart() {
 
         total += item.price;
 
-
         cartItems.innerHTML += `
 
             <div class="cart-item">
@@ -1284,6 +1165,10 @@ function updateCart() {
 
                     <div class="cart-item-name">
                         ${item.name}
+                    </div>
+
+                    <div class="cart-item-code">
+                        Code: ${item.code}
                     </div>
 
                     <div class="cart-item-price">
@@ -1312,66 +1197,49 @@ function updateCart() {
 }
 
 
-/* =====================================================
-   OPEN CART
-===================================================== */
-
-function openCart() {
-
-    document.getElementById("cartSection")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-
-}
-
-
-/* =====================================================
+/* =========================================================
    CHECKOUT
-===================================================== */
+========================================================= */
 
 function openCheckout() {
 
     if (cart.length === 0) {
 
-        alert(
-            "Please add a product to your cart first."
-        );
+        alert("Please add a product to your cart first.");
 
         return;
     }
 
+    document.getElementById("checkoutTotal").textContent =
+        calculateTotal();
 
-    let total = 0;
-
-    cart.forEach(item => {
-        total += item.price;
-    });
-
-
-    document.getElementById("checkoutTotal")
-        .textContent = total;
-
-
-    document.getElementById("checkoutModal")
-        .style.display = "flex";
-
+    document.getElementById("checkoutModal").style.display =
+        "flex";
 }
 
 
 function closeCheckout() {
 
-    document.getElementById("checkoutModal")
-        .style.display = "none";
+    document.getElementById("checkoutModal").style.display =
+        "none";
+}
+
+
+function calculateTotal() {
+
+    return cart.reduce(
+        (total, item) => total + item.price,
+        0
+    );
 
 }
 
 
-/* =====================================================
-   PAYMENT
-===================================================== */
+/* =========================================================
+   CONTINUE TO PAYMENT
+========================================================= */
 
-function paymentNow() {
+function continueToPayment() {
 
     const name =
         document.getElementById("customerName").value.trim();
@@ -1386,34 +1254,33 @@ function paymentNow() {
         document.getElementById("customerPin").value.trim();
 
 
-    if (!name ||
-        !phone ||
-        !address ||
-        !pin) {
+    if (!name) {
 
-        alert(
-            "Please fill in all your details before payment."
-        );
+        alert("Please enter your name.");
 
         return;
     }
 
 
-    if (phone.length < 10) {
+    if (!phone) {
 
-        alert(
-            "Please enter a valid phone number."
-        );
+        alert("Please enter your phone number.");
 
         return;
     }
 
 
-    if (pin.length !== 6) {
+    if (!address) {
 
-        alert(
-            "Please enter a valid 6-digit PIN code."
-        );
+        alert("Please enter your address.");
+
+        return;
+    }
+
+
+    if (!pin) {
+
+        alert("Please enter your PIN code.");
 
         return;
     }
@@ -1421,17 +1288,43 @@ function paymentNow() {
 
     closeCheckout();
 
-    document.getElementById("qrModal")
-        .style.display = "flex";
+    document.getElementById("paymentModal").style.display =
+        "flex";
 
 }
 
 
-/* =====================================================
-   CONFIRM PAYMENT
-===================================================== */
+/* =========================================================
+   PAYMENT
+========================================================= */
 
-function confirmPayment() {
+function closePayment() {
+
+    document.getElementById("paymentModal").style.display =
+        "none";
+}
+
+
+function paymentCompleted() {
+
+    closePayment();
+
+    createOrderMessage();
+
+    document.getElementById("confirmationModal").style.display =
+        "flex";
+
+}
+
+
+/* =========================================================
+   CREATE ORDER MESSAGE
+========================================================= */
+
+let finalOrderMessage = "";
+
+
+function createOrderMessage() {
 
     const name =
         document.getElementById("customerName").value.trim();
@@ -1446,109 +1339,88 @@ function confirmPayment() {
         document.getElementById("customerPin").value.trim();
 
 
-    let total = 0;
-
-    let orderText =
-        "Hello Zyrazin!%0A%0AI have placed an order.%0A%0A";
-
-
-    orderText +=
-        "Customer Name: " +
-        encodeURIComponent(name) +
-        "%0A";
-
-    orderText +=
-        "Phone: " +
-        encodeURIComponent(phone) +
-        "%0A";
-
-    orderText +=
-        "Address: " +
-        encodeURIComponent(address) +
-        "%0A";
-
-    orderText +=
-        "PIN Code: " +
-        encodeURIComponent(pin) +
-        "%0A%0A";
-
-
-    orderText +=
-        "Products:%0A";
-
+    let productDetails = "";
 
     cart.forEach((item, index) => {
 
-        orderText +=
-            (index + 1) +
-            ". " +
-            encodeURIComponent(item.name) +
-            " - ₹" +
-            item.price +
-            "%0A";
-
-        total += item.price;
+        productDetails +=
+            `${index + 1}. ${item.name} (${item.code}) - ₹${item.price}\n`;
 
     });
 
 
-    orderText +=
-        "%0ATotal: ₹" +
-        total;
+    const total = calculateTotal();
 
 
-    /* Save order details */
+    finalOrderMessage =
+`Hello Zyrazin! 🧡
 
-    localStorage.setItem(
-        "zyrazinLastOrder",
-        JSON.stringify({
-            name: name,
-            phone: phone,
-            address: address,
-            pin: pin,
-            products: cart,
-            total: total
+I have completed my payment and would like to confirm my order.
+
+Customer Name: ${name}
+
+Phone: ${phone}
+
+Address:
+${address}
+
+PIN Code: ${pin}
+
+Order:
+${productDetails}
+Total: ₹${total}
+
+Please confirm my order. Thank you! 💞`;
+
+
+    document.getElementById("orderMessage").textContent =
+        finalOrderMessage;
+
+}
+
+
+/* =========================================================
+   COPY ORDER MESSAGE
+========================================================= */
+
+function copyOrderMessage() {
+
+    navigator.clipboard.writeText(finalOrderMessage)
+        .then(() => {
+
+            alert(
+                "Order details copied! 🧡\n\nNow tap Instagram and send the message to Zyrazin."
+            );
+
         })
+        .catch(() => {
+
+            alert(
+                "Please select and copy the order message manually."
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+function openInstagram() {
+
+    window.open(
+        "https://www.instagram.com/zyrazin_/",
+        "_blank"
     );
 
-
-    /* Store prepared Instagram message */
-
-    localStorage.setItem(
-        "zyrazinOrderMessage",
-        orderText
-    );
-
-
-    document.getElementById("qrModal")
-        .style.display = "none";
-
-
-    document.getElementById("successModal")
-        .style.display = "flex";
-
 }
 
 
-function closeQR() {
-
-    document.getElementById("qrModal")
-        .style.display = "none";
-
-}
-
-
-function closeSuccess() {
-
-    document.getElementById("successModal")
-        .style.display = "none";
-
-}
-
-
-/* =====================================================
-   CLOSE MODALS WHEN OUTSIDE IS CLICKED
-===================================================== */
+/* =========================================================
+   CLOSE MODALS BY CLICKING OUTSIDE
+========================================================= */
 
 window.onclick = function(event) {
 
@@ -1558,35 +1430,36 @@ window.onclick = function(event) {
     const checkoutModal =
         document.getElementById("checkoutModal");
 
-    const qrModal =
-        document.getElementById("qrModal");
-
-    const successModal =
-        document.getElementById("successModal");
+    const paymentModal =
+        document.getElementById("paymentModal");
 
 
     if (event.target === productModal) {
+
         productModal.style.display = "none";
+
     }
+
 
     if (event.target === checkoutModal) {
+
         checkoutModal.style.display = "none";
+
     }
 
-    if (event.target === qrModal) {
-        qrModal.style.display = "none";
+
+    if (event.target === paymentModal) {
+
+        paymentModal.style.display = "none";
+
     }
 
-    if (event.target === successModal) {
-        successModal.style.display = "none";
-    }
-
-}
+};
 
 
-/* =====================================================
+/* =========================================================
    INITIAL CART
-===================================================== */
+========================================================= */
 
 updateCart();
 
