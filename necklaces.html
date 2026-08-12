@@ -11,18 +11,12 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     background: #fffafb;
     color: #33272b;
     font-family: Georgia, "Times New Roman", serif;
 }
-
-/* ================= HEADER ================= */
 
 header {
     background: #fffafb;
@@ -37,11 +31,9 @@ header {
     margin: auto;
     min-height: 82px;
     padding: 12px 22px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
 }
 
 .logo {
@@ -50,13 +42,11 @@ header {
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 7px;
-    white-space: nowrap;
 }
 
 nav {
     display: flex;
-    align-items: center;
-    gap: 25px;
+    gap: 22px;
 }
 
 nav a {
@@ -64,12 +54,6 @@ nav a {
     color: #49383e;
     font-size: 16px;
 }
-
-nav a:hover {
-    color: #a56d7e;
-}
-
-/* ================= PAGE TITLE ================= */
 
 .page-title {
     text-align: center;
@@ -79,22 +63,16 @@ nav a:hover {
 .page-title h1 {
     margin: 0;
     font-size: 40px;
-    color: #30252a;
 }
 
 .page-title p {
-    margin: 10px 0 0;
     color: #8b737b;
-    font-size: 17px;
 }
-
-/* ================= PRODUCTS ================= */
 
 .products {
     max-width: 1050px;
     margin: auto;
-    padding: 10px 22px 50px;
-
+    padding: 10px 20px 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
@@ -105,8 +83,7 @@ nav a:hover {
     border: 1px solid #ead9de;
     border-radius: 18px;
     overflow: hidden;
-
-    box-shadow: 0 7px 22px rgba(80,45,55,0.06);
+    box-shadow: 0 7px 22px rgba(80,45,55,.06);
 }
 
 .product-image {
@@ -124,13 +101,11 @@ nav a:hover {
 .product-name {
     margin: 0 0 7px;
     font-size: 18px;
-    line-height: 1.25;
 }
 
 .price {
-    margin: 0 0 12px;
-    font-size: 19px;
     color: #9b6275;
+    font-size: 19px;
     font-weight: bold;
 }
 
@@ -140,46 +115,50 @@ nav a:hover {
     margin-bottom: 12px;
 }
 
-.view-btn {
-    width: 100%;
+.view-btn,
+.add-cart-btn,
+.checkout-btn,
+.payment-btn,
+.paid-btn,
+.instagram-btn,
+.copy-btn {
     border: none;
-    border-radius: 24px;
-    padding: 11px;
-
-    background: #a66c7d;
-    color: white;
-
+    border-radius: 25px;
+    padding: 13px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 15px;
-
+    font-size: 16px;
     cursor: pointer;
 }
 
-.view-btn:hover {
-    background: #8f596b;
+.view-btn,
+.add-cart-btn,
+.checkout-btn,
+.payment-btn,
+.paid-btn,
+.instagram-btn {
+    background: #a66c7d;
+    color: white;
 }
 
-/* ================= CART ================= */
+.view-btn {
+    width: 100%;
+}
 
 .cart-section {
     max-width: 1050px;
-    margin: 0 auto 50px;
-    padding: 20px 22px;
+    margin: auto;
+    padding: 20px;
 }
 
 .cart-box {
-    background: #fff;
+    background: white;
     border: 1px solid #ead9de;
     border-radius: 22px;
     padding: 25px;
-
-    box-shadow: 0 7px 22px rgba(80,45,55,0.06);
 }
 
 .cart-title {
     text-align: center;
-    font-size: 27px;
-    margin: 0 0 20px;
 }
 
 .cart-empty {
@@ -189,105 +168,68 @@ nav a:hover {
 
 .cart-item {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 12px;
-
+    align-items: center;
     padding: 13px 0;
     border-bottom: 1px solid #eee0e4;
-}
-
-.cart-item-name {
-    font-size: 16px;
 }
 
 .cart-item-code {
     color: #9a7a83;
     font-size: 13px;
-    margin-top: 3px;
 }
 
 .cart-item-price {
     color: #9b6275;
     font-weight: bold;
-    margin-top: 4px;
 }
 
 .remove-btn {
     border: none;
-    background: transparent;
+    background: none;
     color: #b16c7c;
     cursor: pointer;
 }
 
 .cart-total {
     text-align: center;
-    margin: 22px 0;
     font-size: 21px;
     font-weight: bold;
+    margin: 22px;
 }
 
 .checkout-btn {
-    display: block;
     width: 100%;
-    border: none;
-    border-radius: 25px;
-    padding: 14px;
-
-    background: #a66c7d;
-    color: white;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-
-    cursor: pointer;
 }
-
-.checkout-btn:hover {
-    background: #8f596b;
-}
-
-/* ================= MODAL ================= */
 
 .modal {
     display: none;
-
     position: fixed;
     inset: 0;
-
-    background: rgba(35,25,29,0.65);
-
+    background: rgba(35,25,29,.65);
     z-index: 2000;
-
     align-items: center;
     justify-content: center;
-
     padding: 18px;
 }
 
 .modal-content {
     background: white;
-    width: min(500px, 100%);
+    width: min(500px,100%);
     max-height: 92vh;
     overflow-y: auto;
-
     border-radius: 24px;
     padding: 24px;
-
     position: relative;
 }
 
 .close {
     position: absolute;
-    top: 10px;
     right: 18px;
-
+    top: 10px;
     font-size: 29px;
     cursor: pointer;
-    color: #654b54;
 }
-
-/* ================= PRODUCT MODAL ================= */
 
 .modal-image {
     width: 100%;
@@ -298,7 +240,6 @@ nav a:hover {
 
 .modal-title {
     font-size: 26px;
-    margin: 17px 0 7px;
 }
 
 .modal-price {
@@ -310,26 +251,6 @@ nav a:hover {
 .add-cart-btn {
     width: 100%;
     margin-top: 17px;
-
-    border: none;
-    border-radius: 25px;
-    padding: 14px;
-
-    background: #a66c7d;
-    color: white;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-
-    cursor: pointer;
-}
-
-/* ================= CHECKOUT ================= */
-
-.checkout-title {
-    text-align: center;
-    font-size: 27px;
-    margin: 5px 0 20px;
 }
 
 .form-group {
@@ -339,31 +260,20 @@ nav a:hover {
 .form-group label {
     display: block;
     margin-bottom: 6px;
-    font-size: 15px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 13px;
-
+    padding: 12px;
     border: 1px solid #dfcbd1;
     border-radius: 10px;
-
     font-family: Georgia, "Times New Roman", serif;
     font-size: 15px;
-
-    outline: none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #a66c7d;
 }
 
 .form-group textarea {
     min-height: 80px;
-    resize: vertical;
 }
 
 .checkout-summary {
@@ -373,31 +283,14 @@ nav a:hover {
     margin: 18px 0;
 }
 
-.checkout-summary strong {
-    color: #9b6275;
-}
-
-.payment-btn {
+.payment-btn,
+.paid-btn {
     width: 100%;
-    border: none;
-    border-radius: 25px;
-    padding: 14px;
-
-    background: #a66c7d;
-    color: white;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-
-    cursor: pointer;
 }
 
-/* ================= QR PAYMENT ================= */
-
-.qr-title {
+.qr-title,
+.confirm-title {
     text-align: center;
-    font-size: 25px;
-    margin-top: 5px;
 }
 
 .qr-image {
@@ -408,154 +301,74 @@ nav a:hover {
     border-radius: 12px;
 }
 
-.payment-note {
+.payment-note,
+.confirm-text,
+.small-note {
     text-align: center;
     color: #77636a;
-    font-size: 14px;
     line-height: 1.5;
-}
-
-.upi-id {
-    text-align: center;
-    margin: 12px 0;
-}
-
-.paid-btn {
-    width: 100%;
-    border: none;
-    border-radius: 25px;
-    padding: 13px;
-
-    background: #a66c7d;
-    color: white;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-/* ================= CONFIRMATION ================= */
-
-.confirm-title {
-    text-align: center;
-    font-size: 27px;
-    color: #8f596b;
-    margin: 5px 0 12px;
-}
-
-.confirm-text {
-    text-align: center;
-    color: #65545a;
-    line-height: 1.55;
-    font-size: 15px;
 }
 
 .order-message {
     background: #fff5f7;
     border: 1px solid #ead9de;
     border-radius: 12px;
-
-    padding: 14px;
+    padding: 15px;
     margin: 18px 0;
-
     white-space: pre-line;
     font-size: 14px;
-    line-height: 1.5;
-}
-
-.copy-btn,
-.instagram-btn {
-    width: 100%;
-    border: none;
-    border-radius: 25px;
-    padding: 13px;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-
-    cursor: pointer;
-    margin-top: 9px;
+    line-height: 1.6;
 }
 
 .copy-btn {
+    width: 100%;
     background: #ead1d8;
     color: #49383e;
 }
 
 .instagram-btn {
-    background: #a66c7d;
-    color: white;
+    width: 100%;
+    margin-top: 10px;
 }
-
-.instagram-btn:hover {
-    background: #8f596b;
-}
-
-.small-note {
-    text-align: center;
-    font-size: 13px;
-    color: #8b737b;
-    margin-top: 13px;
-    line-height: 1.5;
-}
-
-/* ================= FOOTER ================= */
 
 footer {
     text-align: center;
-    padding: 28px 20px;
+    padding: 30px;
     border-top: 1px solid #ead9de;
     color: #8b737b;
 }
 
-/* ================= MOBILE ================= */
-
-@media (max-width: 700px) {
+@media(max-width:700px) {
 
     .header-inner {
-        min-height: 70px;
-        padding: 12px 14px;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .logo {
-        font-size: 22px;
+        font-size: 23px;
         letter-spacing: 4px;
     }
 
     nav {
-        gap: 12px;
+        gap: 15px;
     }
 
     nav a {
         font-size: 13px;
     }
 
-    .page-title {
-        padding-top: 30px;
-    }
-
-    .page-title h1 {
-        font-size: 34px;
-    }
-
     .products {
-        grid-template-columns: repeat(2, 1fr);
         gap: 13px;
-        padding-left: 12px;
-        padding-right: 12px;
+        padding: 10px 12px 40px;
     }
 
     .product-image {
-        height: 210px;
-    }
-
-    .product-info {
-        padding: 12px;
+        height: 200px;
     }
 
     .product-name {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .price {
@@ -564,42 +377,12 @@ footer {
 
     .view-btn {
         font-size: 13px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .header-inner {
-        flex-direction: column;
-    }
-
-    nav {
-        gap: 16px;
-    }
-
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .product-image {
-        height: 190px;
-    }
-
-    .product-name {
-        font-size: 15px;
-    }
-
-    .cart-box {
-        padding: 20px 15px;
     }
 }
 </style>
 </head>
 
 <body>
-
-<!-- ================= HEADER ================= -->
 
 <header>
     <div class="header-inner">
@@ -618,32 +401,18 @@ footer {
     </div>
 </header>
 
-
-<!-- ================= TITLE ================= -->
-
 <section class="page-title">
-
     <h1>Necklaces</h1>
-
     <p>Elegant pieces selected for you</p>
-
 </section>
 
-
-<!-- ================= PRODUCTS ================= -->
-
 <section class="products" id="products"></section>
-
-
-<!-- ================= CART ================= -->
 
 <section class="cart-section">
 
     <div class="cart-box">
 
-        <h2 class="cart-title">
-            Your Cart
-        </h2>
+        <h2 class="cart-title">Your Cart</h2>
 
         <div id="cartItems"></div>
 
@@ -654,7 +423,9 @@ footer {
         <button
             class="checkout-btn"
             onclick="openCheckout()">
+
             Proceed to Checkout
+
         </button>
 
     </div>
@@ -662,30 +433,31 @@ footer {
 </section>
 
 
-<!-- ================= PRODUCT MODAL ================= -->
+<!-- PRODUCT MODAL -->
 
 <div class="modal" id="productModal">
 
     <div class="modal-content">
 
-        <span class="close"
-              onclick="closeProduct()">×</span>
+        <span class="close" onclick="closeProduct()">×</span>
 
         <img id="modalImage"
-             class="modal-image"
-             src=""
-             alt="Product">
+             class="modal-image">
 
         <h2 id="modalTitle"
-            class="modal-title"></h2>
+            class="modal-title">
+        </h2>
 
         <div id="modalPrice"
-             class="modal-price"></div>
+             class="modal-price">
+        </div>
 
         <button
             class="add-cart-btn"
             onclick="addSelectedProduct()">
+
             Add to Cart
+
         </button>
 
     </div>
@@ -693,7 +465,7 @@ footer {
 </div>
 
 
-<!-- ================= CHECKOUT MODAL ================= -->
+<!-- CHECKOUT MODAL -->
 
 <div class="modal" id="checkoutModal">
 
@@ -702,7 +474,7 @@ footer {
         <span class="close"
               onclick="closeCheckout()">×</span>
 
-        <h2 class="checkout-title">
+        <h2 style="text-align:center;">
             Your Details
         </h2>
 
@@ -711,24 +483,22 @@ footer {
             <label>Full Name</label>
 
             <input
-                type="text"
                 id="customerName"
+                type="text"
                 placeholder="Enter your name">
 
         </div>
-
 
         <div class="form-group">
 
             <label>Phone Number</label>
 
             <input
-                type="tel"
                 id="customerPhone"
+                type="tel"
                 placeholder="Enter your phone number">
 
         </div>
-
 
         <div class="form-group">
 
@@ -736,33 +506,30 @@ footer {
 
             <textarea
                 id="customerAddress"
-                placeholder="Enter your full address"></textarea>
+                placeholder="Enter your full address">
+            </textarea>
 
         </div>
-
 
         <div class="form-group">
 
             <label>PIN Code</label>
 
             <input
-                type="text"
                 id="customerPin"
+                type="text"
                 placeholder="Enter PIN code">
 
         </div>
 
-
         <div class="checkout-summary">
 
-            <strong>Order Total</strong>
-
-            <div style="margin-top:7px;">
+            Total:
+            <strong>
                 ₹<span id="checkoutTotal">0</span>
-            </div>
+            </strong>
 
         </div>
-
 
         <button
             class="payment-btn"
@@ -777,7 +544,7 @@ footer {
 </div>
 
 
-<!-- ================= PAYMENT MODAL ================= -->
+<!-- PAYMENT MODAL -->
 
 <div class="modal" id="paymentModal">
 
@@ -791,7 +558,7 @@ footer {
         </h2>
 
         <p class="payment-note">
-            Please scan the QR code below and complete your payment.
+            Scan the QR code below to complete your payment.
         </p>
 
         <img
@@ -799,18 +566,11 @@ footer {
             class="qr-image"
             alt="Zyrazin Payment QR">
 
-        <div class="upi-id">
-
+        <p style="text-align:center;">
             UPI ID:<br>
-
             <strong>
                 jasiyajunaid2002-1@oksbi
             </strong>
-
-        </div>
-
-        <p class="payment-note">
-            After completing the payment, tap the button below.
         </p>
 
         <button
@@ -824,646 +584,3 @@ footer {
     </div>
 
 </div>
-
-
-<!-- ================= CONFIRMATION MODAL ================= -->
-
-<div class="modal" id="confirmationModal">
-
-    <div class="modal-content">
-
-        <h2 class="confirm-title">
-            Order Ready 💞
-        </h2>
-
-        <p class="confirm-text">
-
-            Thank you for shopping with Zyrazin! 🧡<br>
-
-            Your order details are ready.
-
-        </p>
-
-
-        <div
-            class="order-message"
-            id="orderMessage">
-        </div>
-
-
-        <button
-            class="copy-btn"
-            onclick="copyOrderMessage()">
-
-            📋 Copy Order Details
-
-        </button>
-
-
-        <button
-            class="instagram-btn"
-            onclick="openInstagram()">
-
-            Instagram
-
-        </button>
-
-
-        <p class="small-note">
-
-            Tap <strong>Copy Order Details</strong>, then open
-            Zyrazin Instagram and send the copied message to us
-            to confirm your order.
-
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    © 2026 Zyrazin Jewellery
-
-</footer>
-
-
-<script>
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
-
-const products = [
-
-    {
-        code: "CH01",
-        name: "Vintage Rose Necklace",
-        price: 220,
-        image: "product/CH01 - Vintage Rose Necklace.PNG",
-        stock: 1
-    },
-
-    {
-        code: "CH02",
-        name: "Red Butterfly Necklace",
-        price: 220,
-        image: "product/CH02 - Red Butterfly Necklace.PNG",
-        stock: 1
-    },
-
-    {
-        code: "CH03",
-        name: "Floral Vibes Necklace",
-        price: 220,
-        image: "product/CH03 - Floral Vibes Necklace.PNG",
-        stock: 1
-    },
-
-    {
-        code: "CH04",
-        name: "Bow & Heart Necklace",
-        price: 220,
-        image: "product/CH04 - Bow & Heart Necklace.PNG",
-        stock: 1
-    },
-
-    {
-        code: "CH05",
-        name: "Black Butterfly Necklace",
-        price: 220,
-        image: "product/CH05 - Black Butterfly Necklace.PNG",
-        stock: 1
-    },
-
-    {
-        code: "CH06",
-        name: "Golden Charm Necklace",
-        price: 220,
-        image: "product/CH06 - Golden Charm Necklace.PNG",
-        stock: 1
-    },
-
-    {
-        code: "CH07",
-        name: "White Butterfly Necklace",
-        price: 220,
-        image: "product/CH07 - White Butterfly Necklace.JPG",
-        stock: 1
-    },
-
-    {
-        code: "CH08",
-        name: "Emerald Stone Necklace",
-        price: 220,
-        image: "product/CH08 - Emerald Stone Necklace.JPG",
-        stock: 1
-    },
-
-    {
-        code: "CH09",
-        name: "Black Heart Necklace",
-        price: 220,
-        image: "product/CH09 - Black Heart Necklace.JPG",
-        stock: 1
-    },
-
-    {
-        code: "CH10",
-        name: "Angel Number Necklace",
-        price: 220,
-        image: "product/CH10 - Angel Number Necklace.JPG",
-        stock: 1
-    },
-
-    {
-        code: "CH11",
-        name: "Red Tulip Necklace",
-        price: 220,
-        image: "product/CH11 - Red Tulip Necklace.JPG",
-        stock: 1
-    },
-
-    {
-        code: "CH12",
-        name: "White Flower Necklace",
-        price: 220,
-        image: "product/CH12 - White Flower Necklace.JPG",
-        stock: 1
-    }
-
-];
-
-
-/* =========================================================
-   SHOW PRODUCTS
-========================================================= */
-
-const productsContainer =
-    document.getElementById("products");
-
-products.forEach((product, index) => {
-
-    productsContainer.innerHTML += `
-
-        <div class="product-card">
-
-            <img
-                class="product-image"
-                src="${product.image}"
-                alt="${product.name}"
-            >
-
-            <div class="product-info">
-
-                <h2 class="product-name">
-                    ${product.name}
-                </h2>
-
-                <p class="price">
-                    ₹${product.price}
-                </p>
-
-                <div class="stock">
-                    ${product.stock === 1
-                        ? "1 piece left"
-                        : product.stock + " pieces left"}
-                </div>
-
-                <button
-                    class="view-btn"
-                    onclick="viewProduct(${index})">
-
-                    View Product
-
-                </button>
-
-            </div>
-
-        </div>
-
-    `;
-
-});
-
-
-/* =========================================================
-   PRODUCT VIEW
-========================================================= */
-
-let selectedProduct = null;
-
-function viewProduct(index) {
-
-    selectedProduct = products[index];
-
-    document.getElementById("modalImage").src =
-        selectedProduct.image;
-
-    document.getElementById("modalTitle").textContent =
-        selectedProduct.name;
-
-    document.getElementById("modalPrice").textContent =
-        "₹" + selectedProduct.price;
-
-    document.getElementById("productModal").style.display =
-        "flex";
-}
-
-
-function closeProduct() {
-
-    document.getElementById("productModal").style.display =
-        "none";
-}
-
-
-/* =========================================================
-   CART
-========================================================= */
-
-let cart = [];
-
-
-function addSelectedProduct() {
-
-    if (!selectedProduct) return;
-
-    /*
-       Only one piece is available.
-       Prevent adding the same product twice.
-    */
-
-    const alreadyInCart =
-        cart.some(item => item.code === selectedProduct.code);
-
-    if (alreadyInCart) {
-
-        alert("Only 1 piece is available for this product.");
-
-        return;
-    }
-
-    cart.push(selectedProduct);
-
-    closeProduct();
-
-    updateCart();
-
-}
-
-
-function removeFromCart(index) {
-
-    cart.splice(index, 1);
-
-    updateCart();
-
-}
-
-
-function updateCart() {
-
-    const cartItems =
-        document.getElementById("cartItems");
-
-    const cartTotal =
-        document.getElementById("cartTotal");
-
-
-    if (cart.length === 0) {
-
-        cartItems.innerHTML = `
-            <p class="cart-empty">
-                Your cart is empty.
-            </p>
-        `;
-
-        cartTotal.textContent = "0";
-
-        return;
-    }
-
-
-    let total = 0;
-
-    cartItems.innerHTML = "";
-
-
-    cart.forEach((item, index) => {
-
-        total += item.price;
-
-        cartItems.innerHTML += `
-
-            <div class="cart-item">
-
-                <div>
-
-                    <div class="cart-item-name">
-                        ${item.name}
-                    </div>
-
-                    <div class="cart-item-code">
-                        Code: ${item.code}
-                    </div>
-
-                    <div class="cart-item-price">
-                        ₹${item.price}
-                    </div>
-
-                </div>
-
-                <button
-                    class="remove-btn"
-                    onclick="removeFromCart(${index})">
-
-                    Remove
-
-                </button>
-
-            </div>
-
-        `;
-
-    });
-
-
-    cartTotal.textContent = total;
-
-}
-
-
-/* =========================================================
-   CHECKOUT
-========================================================= */
-
-function openCheckout() {
-
-    if (cart.length === 0) {
-
-        alert("Please add a product to your cart first.");
-
-        return;
-    }
-
-    document.getElementById("checkoutTotal").textContent =
-        calculateTotal();
-
-    document.getElementById("checkoutModal").style.display =
-        "flex";
-}
-
-
-function closeCheckout() {
-
-    document.getElementById("checkoutModal").style.display =
-        "none";
-}
-
-
-function calculateTotal() {
-
-    return cart.reduce(
-        (total, item) => total + item.price,
-        0
-    );
-
-}
-
-
-/* =========================================================
-   CONTINUE TO PAYMENT
-========================================================= */
-
-function continueToPayment() {
-
-    const name =
-        document.getElementById("customerName").value.trim();
-
-    const phone =
-        document.getElementById("customerPhone").value.trim();
-
-    const address =
-        document.getElementById("customerAddress").value.trim();
-
-    const pin =
-        document.getElementById("customerPin").value.trim();
-
-
-    if (!name) {
-
-        alert("Please enter your name.");
-
-        return;
-    }
-
-
-    if (!phone) {
-
-        alert("Please enter your phone number.");
-
-        return;
-    }
-
-
-    if (!address) {
-
-        alert("Please enter your address.");
-
-        return;
-    }
-
-
-    if (!pin) {
-
-        alert("Please enter your PIN code.");
-
-        return;
-    }
-
-
-    closeCheckout();
-
-    document.getElementById("paymentModal").style.display =
-        "flex";
-
-}
-
-
-/* =========================================================
-   PAYMENT
-========================================================= */
-
-function closePayment() {
-
-    document.getElementById("paymentModal").style.display =
-        "none";
-}
-
-
-function paymentCompleted() {
-
-    closePayment();
-
-    createOrderMessage();
-
-    document.getElementById("confirmationModal").style.display =
-        "flex";
-
-}
-
-
-/* =========================================================
-   CREATE ORDER MESSAGE
-========================================================= */
-
-let finalOrderMessage = "";
-
-
-function createOrderMessage() {
-
-    const name =
-        document.getElementById("customerName").value.trim();
-
-    const phone =
-        document.getElementById("customerPhone").value.trim();
-
-    const address =
-        document.getElementById("customerAddress").value.trim();
-
-    const pin =
-        document.getElementById("customerPin").value.trim();
-
-
-    let productDetails = "";
-
-    cart.forEach((item, index) => {
-
-        productDetails +=
-            `${index + 1}. ${item.name} (${item.code}) - ₹${item.price}\n`;
-
-    });
-
-
-    const total = calculateTotal();
-
-
-    finalOrderMessage =
-`Hello Zyrazin! 🧡
-
-I have completed my payment and would like to confirm my order.
-
-Customer Name: ${name}
-
-Phone: ${phone}
-
-Address:
-${address}
-
-PIN Code: ${pin}
-
-Order:
-${productDetails}
-Total: ₹${total}
-
-Please confirm my order. Thank you! 💞`;
-
-
-    document.getElementById("orderMessage").textContent =
-        finalOrderMessage;
-
-}
-
-
-/* =========================================================
-   COPY ORDER MESSAGE
-========================================================= */
-
-function copyOrderMessage() {
-
-    navigator.clipboard.writeText(finalOrderMessage)
-        .then(() => {
-
-            alert(
-                "Order details copied! 🧡\n\nNow tap Instagram and send the message to Zyrazin."
-            );
-
-        })
-        .catch(() => {
-
-            alert(
-                "Please select and copy the order message manually."
-            );
-
-        });
-
-}
-
-
-/* =========================================================
-   INSTAGRAM
-========================================================= */
-
-function openInstagram() {
-
-    window.open(
-        "https://www.instagram.com/zyrazin_/",
-        "_blank"
-    );
-
-}
-
-
-/* =========================================================
-   CLOSE MODALS BY CLICKING OUTSIDE
-========================================================= */
-
-window.onclick = function(event) {
-
-    const productModal =
-        document.getElementById("productModal");
-
-    const checkoutModal =
-        document.getElementById("checkoutModal");
-
-    const paymentModal =
-        document.getElementById("paymentModal");
-
-
-    if (event.target === productModal) {
-
-        productModal.style.display = "none";
-
-    }
-
-
-    if (event.target === checkoutModal) {
-
-        checkoutModal.style.display = "none";
-
-    }
-
-
-    if (event.target === paymentModal) {
-
-        paymentModal.style.display = "none";
-
-    }
-
-};
-
-
-/* =========================================================
-   INITIAL CART
-========================================================= */
-
-updateCart();
-
-</script>
-
-</body>
-</html>
