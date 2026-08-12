@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Zyrazin | Necklaces</title>
 
 <style>
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,9 +24,13 @@ body {
     font-family: Georgia, "Times New Roman", serif;
 }
 
+
+/* ================= HEADER ================= */
+
 header {
     background: #fffafb;
     border-bottom: 1px solid #ead9de;
+
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -29,228 +39,461 @@ header {
 .header-inner {
     max-width: 1100px;
     margin: auto;
+
     min-height: 82px;
     padding: 12px 22px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 20px;
 }
+
+
+/* LOGO */
 
 .logo {
     text-decoration: none;
+
     color: #9d6879;
+
     font-size: 30px;
     font-weight: bold;
+
     letter-spacing: 7px;
+
+    white-space: nowrap;
 }
+
+
+/* NAVIGATION */
 
 nav {
     display: flex;
-    gap: 22px;
+    align-items: center;
+
+    gap: 25px;
 }
 
 nav a {
     text-decoration: none;
+
     color: #49383e;
+
     font-size: 16px;
 }
 
+nav a:hover {
+    color: #a56d7e;
+}
+
+
+/* ================= PAGE TITLE ================= */
+
 .page-title {
     text-align: center;
-    padding: 40px 20px 25px;
+
+    padding: 45px 20px 30px;
 }
 
 .page-title h1 {
     margin: 0;
-    font-size: 40px;
+
+    font-size: 43px;
+
+    color: #30252a;
 }
 
 .page-title p {
+    margin: 10px 0 0;
+
     color: #8b737b;
+
+    font-size: 18px;
 }
+
+
+/* ================= PRODUCTS ================= */
 
 .products {
     max-width: 1050px;
+
     margin: auto;
-    padding: 10px 20px 50px;
+
+    padding: 10px 22px 60px;
+
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+
+    gap: 24px;
 }
+
+
+/* PRODUCT CARD */
 
 .product-card {
     background: white;
+
     border: 1px solid #ead9de;
-    border-radius: 18px;
+
+    border-radius: 20px;
+
     overflow: hidden;
-    box-shadow: 0 7px 22px rgba(80,45,55,.06);
+
+    box-shadow:
+        0 8px 25px rgba(80,45,55,0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+.product-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(80,45,55,0.12);
+}
+
+
+/* PRODUCT IMAGE */
 
 .product-image {
     width: 100%;
-    height: 250px;
+
+    height: 300px;
+
     object-fit: cover;
+
     display: block;
+
     background: #f8eef1;
 }
 
+
+/* PRODUCT INFO */
+
 .product-info {
-    padding: 15px;
+    padding: 17px;
 }
 
 .product-name {
     margin: 0 0 7px;
-    font-size: 18px;
+
+    font-size: 19px;
+
+    line-height: 1.3;
+}
+
+.product-code {
+    margin-bottom: 8px;
+
+    color: #9a7a83;
+
+    font-size: 13px;
 }
 
 .price {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+
     color: #9b6275;
-    font-size: 19px;
+
     font-weight: bold;
 }
 
 .stock {
-    color: #8f596b;
+    margin-bottom: 14px;
+
+    color: #a66c7d;
+
     font-size: 13px;
-    margin-bottom: 12px;
+
+    font-weight: 500;
 }
 
-.view-btn,
-.add-cart-btn,
-.checkout-btn,
-.payment-btn,
-.paid-btn,
-.instagram-btn,
-.copy-btn {
-    border: none;
-    border-radius: 25px;
-    padding: 13px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-.view-btn,
-.add-cart-btn,
-.checkout-btn,
-.payment-btn,
-.paid-btn,
-.instagram-btn {
-    background: #a66c7d;
-    color: white;
-}
+/* VIEW BUTTON */
 
 .view-btn {
     width: 100%;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 12px;
+
+    background: #a66c7d;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
 }
+
+.view-btn:hover {
+    background: #8f596b;
+}
+
+
+/* ================= CART ================= */
 
 .cart-section {
     max-width: 1050px;
-    margin: auto;
-    padding: 20px;
+
+    margin: 0 auto 60px;
+
+    padding: 20px 22px;
 }
 
 .cart-box {
     background: white;
+
     border: 1px solid #ead9de;
-    border-radius: 22px;
-    padding: 25px;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(80,45,55,0.06);
 }
 
 .cart-title {
     text-align: center;
+
+    font-size: 28px;
+
+    margin: 0 0 20px;
 }
 
 .cart-empty {
     text-align: center;
+
     color: #8d777e;
+
+    font-size: 17px;
 }
+
+
+/* CART ITEM */
 
 .cart-item {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
-    padding: 13px 0;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
     border-bottom: 1px solid #eee0e4;
+}
+
+.cart-item-name {
+    font-size: 17px;
+
+    margin-bottom: 4px;
 }
 
 .cart-item-code {
     color: #9a7a83;
+
     font-size: 13px;
+
+    margin-bottom: 4px;
 }
 
 .cart-item-price {
     color: #9b6275;
+
     font-weight: bold;
 }
 
 .remove-btn {
     border: none;
-    background: none;
+
+    background: transparent;
+
     color: #b16c7c;
+
     cursor: pointer;
+
+    font-family: Georgia, "Times New Roman", serif;
 }
+
+
+/* CART TOTAL */
 
 .cart-total {
     text-align: center;
-    font-size: 21px;
+
+    margin: 25px 0;
+
+    font-size: 22px;
+
     font-weight: bold;
-    margin: 22px;
 }
+
+
+/* CHECKOUT BUTTON */
 
 .checkout-btn {
     width: 100%;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 14px;
+
+    background: #a66c7d;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
 }
+
+.checkout-btn:hover {
+    background: #8f596b;
+}
+
+
+/* ================= MODALS ================= */
 
 .modal {
     display: none;
+
     position: fixed;
+
     inset: 0;
-    background: rgba(35,25,29,.65);
+
+    background: rgba(35,25,29,0.65);
+
     z-index: 2000;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 18px;
 }
 
 .modal-content {
     background: white;
+
     width: min(500px,100%);
+
     max-height: 92vh;
+
     overflow-y: auto;
-    border-radius: 24px;
+
+    border-radius: 25px;
+
     padding: 24px;
+
     position: relative;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.2);
 }
+
+
+/* CLOSE */
 
 .close {
     position: absolute;
-    right: 18px;
+
     top: 10px;
+
+    right: 18px;
+
     font-size: 29px;
+
     cursor: pointer;
+
+    color: #654b54;
 }
+
+
+/* ================= PRODUCT MODAL ================= */
 
 .modal-image {
     width: 100%;
-    max-height: 400px;
+
+    max-height: 420px;
+
     object-fit: cover;
-    border-radius: 17px;
+
+    border-radius: 18px;
 }
 
 .modal-title {
-    font-size: 26px;
+    font-size: 27px;
+
+    margin: 18px 0 8px;
+}
+
+.modal-code {
+    color: #9a7a83;
+
+    font-size: 14px;
 }
 
 .modal-price {
     color: #9b6275;
-    font-size: 21px;
+
+    font-size: 22px;
+
     font-weight: bold;
+
+    margin-top: 8px;
 }
 
 .add-cart-btn {
     width: 100%;
-    margin-top: 17px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 14px;
+
+    background: #a66c7d;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+/* ================= CHECKOUT FORM ================= */
+
+.form-title {
+    text-align: center;
+
+    font-size: 26px;
+
+    margin-top: 5px;
 }
 
 .form-group {
@@ -259,94 +502,268 @@ nav a {
 
 .form-group label {
     display: block;
+
     margin-bottom: 6px;
+
+    font-size: 15px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
+
     padding: 12px;
+
     border: 1px solid #dfcbd1;
+
     border-radius: 10px;
+
+    outline: none;
+
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 15px;
+
+    background: #fffdfd;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #a66c7d;
 }
 
 .form-group textarea {
-    min-height: 80px;
+    min-height: 85px;
+
+    resize: vertical;
 }
+
+
+/* CHECKOUT SUMMARY */
 
 .checkout-summary {
     background: #fff5f7;
+
     border-radius: 12px;
-    padding: 14px;
+
+    padding: 15px;
+
     margin: 18px 0;
-}
 
-.payment-btn,
-.paid-btn {
-    width: 100%;
-}
-
-.qr-title,
-.confirm-title {
     text-align: center;
+
+    font-size: 18px;
+}
+
+.payment-btn {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 14px;
+
+    background: #a66c7d;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+/* ================= PAYMENT ================= */
+
+.qr-title {
+    text-align: center;
+
+    font-size: 25px;
 }
 
 .qr-image {
     width: 100%;
+
     max-width: 300px;
+
     display: block;
+
     margin: 15px auto;
+
     border-radius: 12px;
 }
 
-.payment-note,
-.confirm-text,
-.small-note {
+.payment-note {
     text-align: center;
+
     color: #77636a;
+
+    line-height: 1.5;
+}
+
+.upi-text {
+    text-align: center;
+
+    line-height: 1.6;
+}
+
+.paid-btn {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 14px;
+
+    background: #a66c7d;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* ================= CONFIRMATION ================= */
+
+.confirm-title {
+    text-align: center;
+
+    font-size: 26px;
+
+    margin-top: 5px;
+}
+
+.confirm-text {
+    text-align: center;
+
+    color: #77636a;
+
     line-height: 1.5;
 }
 
 .order-message {
     background: #fff5f7;
+
     border: 1px solid #ead9de;
+
     border-radius: 12px;
+
     padding: 15px;
+
     margin: 18px 0;
+
     white-space: pre-line;
+
     font-size: 14px;
+
     line-height: 1.6;
+
+    max-height: 300px;
+
+    overflow-y: auto;
 }
+
+
+/* COPY BUTTON */
 
 .copy-btn {
     width: 100%;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 13px;
+
     background: #ead1d8;
+
     color: #49383e;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
 }
+
+.copy-btn:hover {
+    background: #e1c3cc;
+}
+
+
+/* INSTAGRAM BUTTON */
 
 .instagram-btn {
     width: 100%;
+
     margin-top: 10px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 13px;
+
+    background: #a66c7d;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
 }
+
+.small-note {
+    text-align: center;
+
+    color: #8b737b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-top: 15px;
+}
+
+
+/* ================= FOOTER ================= */
 
 footer {
     text-align: center;
-    padding: 30px;
+
+    padding: 30px 20px;
+
     border-top: 1px solid #ead9de;
+
     color: #8b737b;
 }
 
-@media(max-width:700px) {
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
 
     .header-inner {
         flex-direction: column;
+
         gap: 12px;
+
+        padding: 15px 12px;
     }
 
     .logo {
         font-size: 23px;
+
         letter-spacing: 4px;
     }
 
@@ -358,33 +775,99 @@ footer {
         font-size: 13px;
     }
 
+    .page-title {
+        padding-top: 35px;
+    }
+
+    .page-title h1 {
+        font-size: 38px;
+    }
+
+    .page-title p {
+        font-size: 16px;
+    }
+
     .products {
+        grid-template-columns: repeat(2, 1fr);
+
         gap: 13px;
-        padding: 10px 12px 40px;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
     }
 
     .product-image {
-        height: 200px;
+        height: 210px;
+    }
+
+    .product-info {
+        padding: 12px;
     }
 
     .product-name {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .price {
         font-size: 17px;
     }
 
+    .stock {
+        font-size: 12px;
+    }
+
     .view-btn {
         font-size: 13px;
+
+        padding: 11px;
     }
+
+    .cart-box {
+        padding: 22px 17px;
+    }
+
+    .cart-item {
+        align-items: flex-start;
+    }
+
 }
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 420px) {
+
+    .products {
+        gap: 10px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-name {
+        font-size: 15px;
+    }
+
+    .view-btn {
+        font-size: 12px;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <div class="header-inner">
 
         <a href="index.html" class="logo">
@@ -392,32 +875,75 @@ footer {
         </a>
 
         <nav>
-            <a href="index.html">Home</a>
-            <a href="necklaces.html">Necklaces</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#contact">Contact</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="necklaces.html">
+                Necklaces
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
         </nav>
 
     </div>
+
 </header>
 
+
+<!-- ================= PAGE TITLE ================= -->
+
 <section class="page-title">
-    <h1>Necklaces</h1>
-    <p>Elegant pieces selected for you</p>
+
+    <h1>
+        Necklaces
+    </h1>
+
+    <p>
+        Elegant pieces selected for you
+    </p>
+
 </section>
 
-<section class="products" id="products"></section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section
+    class="products"
+    id="products">
+</section>
+
+
+<!-- ================= CART ================= -->
 
 <section class="cart-section">
 
     <div class="cart-box">
 
-        <h2 class="cart-title">Your Cart</h2>
+        <h2 class="cart-title">
+            Your Cart
+        </h2>
 
-        <div id="cartItems"></div>
+        <div id="cartItems">
+
+            <p class="cart-empty">
+                Your cart is empty.
+            </p>
+
+        </div>
 
         <div class="cart-total">
+
             Total: ₹<span id="cartTotal">0</span>
+
         </div>
 
         <button
@@ -433,24 +959,52 @@ footer {
 </section>
 
 
-<!-- PRODUCT MODAL -->
+<!-- ================= PRODUCT MODAL ================= -->
 
-<div class="modal" id="productModal">
+<div
+    class="modal"
+    id="productModal">
 
     <div class="modal-content">
 
-        <span class="close" onclick="closeProduct()">×</span>
+        <span
+            class="close"
+            onclick="closeProduct()">
 
-        <img id="modalImage"
-             class="modal-image">
+            ×
 
-        <h2 id="modalTitle"
+        </span>
+
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+            alt="Product">
+
+
+        <h2
+            id="modalTitle"
             class="modal-title">
         </h2>
 
-        <div id="modalPrice"
-             class="modal-price">
+
+        <div
+            id="modalCode"
+            class="modal-code">
         </div>
+
+
+        <div
+            id="modalPrice"
+            class="modal-price">
+        </div>
+
+
+        <div class="stock">
+            Only 1 piece left
+        </div>
+
 
         <button
             class="add-cart-btn"
@@ -465,77 +1019,119 @@ footer {
 </div>
 
 
-<!-- CHECKOUT MODAL -->
+<!-- ================= CHECKOUT MODAL ================= -->
 
-<div class="modal" id="checkoutModal">
+<div
+    class="modal"
+    id="checkoutModal">
 
     <div class="modal-content">
 
-        <span class="close"
-              onclick="closeCheckout()">×</span>
+        <span
+            class="close"
+            onclick="closeCheckout()">
 
-        <h2 style="text-align:center;">
+            ×
+
+        </span>
+
+
+        <h2 class="form-title">
             Your Details
         </h2>
 
+
+        <p class="small-note">
+            Please enter your details before payment.
+        </p>
+
+
+        <!-- NAME -->
+
         <div class="form-group">
 
-            <label>Full Name</label>
+            <label for="customerName">
+                Full Name
+            </label>
 
             <input
                 id="customerName"
                 type="text"
-                placeholder="Enter your name">
+                placeholder="Enter your name"
+                autocomplete="name">
 
         </div>
 
+
+        <!-- PHONE -->
+
         <div class="form-group">
 
-            <label>Phone Number</label>
+            <label for="customerPhone">
+                Phone Number
+            </label>
 
             <input
                 id="customerPhone"
                 type="tel"
-                placeholder="Enter your phone number">
+                placeholder="Enter your phone number"
+                autocomplete="tel">
 
         </div>
 
+
+        <!-- ADDRESS -->
+
         <div class="form-group">
 
-            <label>Address</label>
+            <label for="customerAddress">
+                Full Address
+            </label>
 
             <textarea
                 id="customerAddress"
-                placeholder="Enter your full address">
+                placeholder="House name, place, district, state">
             </textarea>
 
         </div>
 
+
+        <!-- PIN -->
+
         <div class="form-group">
 
-            <label>PIN Code</label>
+            <label for="customerPin">
+                PIN Code
+            </label>
 
             <input
                 id="customerPin"
                 type="text"
-                placeholder="Enter PIN code">
+                inputmode="numeric"
+                maxlength="6"
+                placeholder="6-digit PIN code">
 
         </div>
 
+
+        <!-- TOTAL -->
+
         <div class="checkout-summary">
 
-            Total:
+            Order Total:
+
             <strong>
                 ₹<span id="checkoutTotal">0</span>
             </strong>
 
         </div>
 
+
         <button
             class="payment-btn"
             onclick="continueToPayment()">
 
-            Continue to Payment
+            Proceed to Payment
 
         </button>
 
@@ -544,34 +1140,63 @@ footer {
 </div>
 
 
-<!-- PAYMENT MODAL -->
+<!-- ================= PAYMENT MODAL ================= -->
 
-<div class="modal" id="paymentModal">
+<div
+    class="modal"
+    id="paymentModal">
 
     <div class="modal-content">
 
-        <span class="close"
-              onclick="closePayment()">×</span>
+        <span
+            class="close"
+            onclick="closePayment()">
+
+            ×
+
+        </span>
+
 
         <h2 class="qr-title">
             Complete Your Payment
         </h2>
 
+
         <p class="payment-note">
-            Scan the QR code below to complete your payment.
+
+            Scan the QR code below
+            to complete your payment.
+
         </p>
+
 
         <img
             src="payment-qr.png.jpg"
             class="qr-image"
             alt="Zyrazin Payment QR">
 
-        <p style="text-align:center;">
+
+        <div class="upi-text">
+
             UPI ID:<br>
+
             <strong>
                 jasiyajunaid2002-1@oksbi
             </strong>
-        </p>
+
+        </div>
+
+
+        <div class="checkout-summary">
+
+            Amount to Pay:
+
+            <strong>
+                ₹<span id="paymentTotal">0</span>
+            </strong>
+
+        </div>
+
 
         <button
             class="paid-btn"
@@ -581,6 +1206,874 @@ footer {
 
         </button>
 
+
+        <p class="small-note">
+
+            After payment, tap the button above
+            to prepare your order confirmation message.
+
+        </p>
+
     </div>
 
 </div>
+
+
+<!-- ================= CONFIRMATION MODAL ================= -->
+
+<div
+    class="modal"
+    id="confirmModal">
+
+    <div class="modal-content">
+
+        <span
+            class="close"
+            onclick="closeConfirm()">
+
+            ×
+
+        </span>
+
+
+        <h2 class="confirm-title">
+            Order Ready 💗
+        </h2>
+
+
+        <p class="confirm-text">
+
+            Your order details are ready.
+
+            <br><br>
+
+            Copy the message below and send it
+            to Zyrazin on Instagram to confirm your order.
+
+        </p>
+
+
+        <div
+            class="order-message"
+            id="orderMessage">
+        </div>
+
+
+        <button
+            class="copy-btn"
+            onclick="copyOrderMessage()">
+
+            📋 Copy Order Message
+
+        </button>
+
+
+        <button
+            class="instagram-btn"
+            onclick="openInstagram()">
+
+            Instagram
+
+        </button>
+
+
+        <p class="small-note">
+
+            First tap
+            <strong>Copy Order Message</strong>,
+            then tap Instagram and send the copied message.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Zyrazin Jewellery
+
+</footer>
+
+
+<script>
+
+
+/* =========================================================
+   PRODUCT DATA
+========================================================= */
+
+const products = [
+
+    {
+        code: "CH01",
+        name: "Vintage Rose Necklace",
+        price: 220,
+        image: "product/CH01 - Vintage Rose Necklace.PNG"
+    },
+
+    {
+        code: "CH02",
+        name: "Red Butterfly Necklace",
+        price: 220,
+        image: "product/CH02 - Red Butterfly Necklace.PNG"
+    },
+
+    {
+        code: "CH03",
+        name: "Floral Vibes Necklace",
+        price: 220,
+        image: "product/CH03 - Floral Vibes Necklace.PNG"
+    },
+
+    {
+        code: "CH04",
+        name: "Bow & Heart Necklace",
+        price: 220,
+        image: "product/CH04 - Bow & Heart Necklace.PNG"
+    },
+
+    {
+        code: "CH05",
+        name: "Black Butterfly Necklace",
+        price: 220,
+        image: "product/CH05 - Black Butterfly Necklace.PNG"
+    },
+
+    {
+        code: "CH06",
+        name: "Golden Charm Necklace",
+        price: 220,
+        image: "product/CH06 - Golden Charm Necklace.PNG"
+    },
+
+    {
+        code: "CH07",
+        name: "White Butterfly Necklace",
+        price: 220,
+        image: "product/CH07 - White Butterfly Necklace.JPG"
+    },
+
+    {
+        code: "CH08",
+        name: "Emerald Stone Necklace",
+        price: 220,
+        image: "product/CH08 - Emerald Stone Necklace.JPG"
+    },
+
+    {
+        code: "CH09",
+        name: "Black Heart Necklace",
+        price: 220,
+        image: "product/CH09 - Black Heart Necklace.JPG"
+    },
+
+    {
+        code: "CH10",
+        name: "Angel Number Necklace",
+        price: 220,
+        image: "product/CH10 - Angel Number Necklace.JPG"
+    },
+
+    {
+        code: "CH11",
+        name: "Red Tulip Necklace",
+        price: 220,
+        image: "product/CH11 - Red Tulip Necklace.JPG"
+    },
+
+    {
+        code: "CH12",
+        name: "White Flower Necklace",
+        price: 220,
+        image: "product/CH12 - White Flower Necklace.JPG"
+    }
+
+];
+
+
+/* =========================================================
+   SHOW PRODUCTS
+========================================================= */
+
+const productsContainer =
+    document.getElementById("products");
+
+
+products.forEach((product, index) => {
+
+    productsContainer.innerHTML += `
+
+        <div class="product-card">
+
+            <img
+                class="product-image"
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy"
+            >
+
+            <div class="product-info">
+
+                <h2 class="product-name">
+                    ${product.name}
+                </h2>
+
+                <div class="product-code">
+                    Code: ${product.code}
+                </div>
+
+                <div class="price">
+                    ₹${product.price}
+                </div>
+
+                <div class="stock">
+                    Only 1 piece left
+                </div>
+
+                <button
+                    class="view-btn"
+                    onclick="viewProduct(${index})">
+
+                    View Product
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
+
+let selectedProduct = null;
+
+
+function viewProduct(index) {
+
+    selectedProduct = products[index];
+
+
+    document.getElementById("modalImage").src =
+        selectedProduct.image;
+
+
+    document.getElementById("modalTitle").textContent =
+        selectedProduct.name;
+
+
+    document.getElementById("modalCode").textContent =
+        "Product Code: " + selectedProduct.code;
+
+
+    document.getElementById("modalPrice").textContent =
+        "₹" + selectedProduct.price;
+
+
+    document.getElementById("productModal").style.display =
+        "flex";
+
+}
+
+
+function closeProduct() {
+
+    document.getElementById("productModal").style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart = [];
+
+
+/* ADD PRODUCT */
+
+function addSelectedProduct() {
+
+    if (!selectedProduct) {
+        return;
+    }
+
+
+    /*
+       Each necklace has only one physical piece.
+       So the same product cannot be added twice.
+    */
+
+    const alreadyAdded =
+        cart.some(
+            item => item.code === selectedProduct.code
+        );
+
+
+    if (alreadyAdded) {
+
+        alert(
+            "This necklace is already in your cart. Only 1 piece is available."
+        );
+
+        return;
+    }
+
+
+    cart.push(selectedProduct);
+
+
+    closeProduct();
+
+
+    updateCart();
+
+}
+
+
+/* REMOVE */
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+}
+
+
+/* TOTAL */
+
+function calculateTotal() {
+
+    return cart.reduce(
+        (total, item) => total + item.price,
+        0
+    );
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart() {
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+
+            <p class="cart-empty">
+                Your cart is empty.
+            </p>
+
+        `;
+
+        cartTotal.textContent = "0";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    cartItems.innerHTML = "";
+
+
+    cart.forEach((item, index) => {
+
+        total += item.price;
+
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <div>
+
+                    <div class="cart-item-name">
+                        ${item.name}
+                    </div>
+
+                    <div class="cart-item-code">
+                        Code: ${item.code}
+                    </div>
+
+                    <div class="cart-item-price">
+                        ₹${item.price}
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="remove-btn"
+                    onclick="removeFromCart(${index})">
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        `;
+
+    });
+
+
+    cartTotal.textContent = total;
+
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+function openCheckout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Please add a necklace to your cart first."
+        );
+
+        return;
+
+    }
+
+
+    document.getElementById("checkoutTotal").textContent =
+        calculateTotal();
+
+
+    document.getElementById("checkoutModal").style.display =
+        "flex";
+
+}
+
+
+function closeCheckout() {
+
+    document.getElementById("checkoutModal").style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   CONTINUE TO PAYMENT
+========================================================= */
+
+function continueToPayment() {
+
+
+    const name =
+        document
+            .getElementById("customerName")
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById("customerPhone")
+            .value
+            .trim();
+
+
+    const address =
+        document
+            .getElementById("customerAddress")
+            .value
+            .trim();
+
+
+    const pin =
+        document
+            .getElementById("customerPin")
+            .value
+            .trim();
+
+
+    /* CHECK EMPTY */
+
+    if (
+        !name ||
+        !phone ||
+        !address ||
+        !pin
+    ) {
+
+        alert(
+            "Please fill in all your details."
+        );
+
+        return;
+
+    }
+
+
+    /* CHECK PHONE */
+
+    if (phone.length < 10) {
+
+        alert(
+            "Please enter a valid phone number."
+        );
+
+        return;
+
+    }
+
+
+    /* CHECK PIN */
+
+    if (!/^[0-9]{6}$/.test(pin)) {
+
+        alert(
+            "Please enter a valid 6-digit PIN code."
+        );
+
+        return;
+
+    }
+
+
+    /* SHOW PAYMENT */
+
+    document.getElementById("paymentTotal").textContent =
+        calculateTotal();
+
+
+    closeCheckout();
+
+
+    document.getElementById("paymentModal").style.display =
+        "flex";
+
+}
+
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+function closePayment() {
+
+    document.getElementById("paymentModal").style.display =
+        "none";
+
+}
+
+
+/* PAYMENT COMPLETED */
+
+function paymentCompleted() {
+
+
+    const name =
+        document
+            .getElementById("customerName")
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById("customerPhone")
+            .value
+            .trim();
+
+
+    const address =
+        document
+            .getElementById("customerAddress")
+            .value
+            .trim();
+
+
+    const pin =
+        document
+            .getElementById("customerPin")
+            .value
+            .trim();
+
+
+    let message =
+
+`Hello Zyrazin! 💗
+
+I have completed my payment and would like to confirm my order.
+
+Customer Name:
+${name}
+
+Phone Number:
+${phone}
+
+Delivery Address:
+${address}
+
+PIN Code:
+${pin}
+
+Order Details:
+`;
+
+
+    cart.forEach((item, index) => {
+
+        message +=
+
+`${index + 1}. ${item.name}
+Product Code: ${item.code}
+Price: ₹${item.price}
+
+`;
+
+    });
+
+
+    message +=
+
+`Total Paid: ₹${calculateTotal()}
+
+Please confirm my order.
+
+Thank you! 💕`;
+
+
+    document.getElementById("orderMessage").textContent =
+        message;
+
+
+    closePayment();
+
+
+    document.getElementById("confirmModal").style.display =
+        "flex";
+
+}
+
+
+/* =========================================================
+   COPY ORDER MESSAGE
+========================================================= */
+
+function copyOrderMessage() {
+
+    const message =
+        document
+            .getElementById("orderMessage")
+            .textContent;
+
+
+    /*
+       Clipboard API
+    */
+
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
+
+        navigator.clipboard
+            .writeText(message)
+            .then(() => {
+
+                showCopied();
+
+            })
+            .catch(() => {
+
+                manualCopy(message);
+
+            });
+
+    } else {
+
+        manualCopy(message);
+
+    }
+
+}
+
+
+/* COPY SUCCESS */
+
+function showCopied() {
+
+    const button =
+        document.querySelector(".copy-btn");
+
+
+    button.textContent =
+        "✓ Message Copied!";
+
+
+    setTimeout(() => {
+
+        button.textContent =
+            "📋 Copy Order Message";
+
+    }, 2500);
+
+}
+
+
+/* FALLBACK COPY */
+
+function manualCopy(message) {
+
+    const textarea =
+        document.createElement("textarea");
+
+
+    textarea.value = message;
+
+
+    textarea.style.position = "fixed";
+
+    textarea.style.left = "-9999px";
+
+
+    document.body.appendChild(textarea);
+
+
+    textarea.focus();
+
+    textarea.select();
+
+
+    try {
+
+        document.execCommand("copy");
+
+        showCopied();
+
+    }
+
+    catch (error) {
+
+        alert(
+            "Copy failed. Please press and hold the message to copy it."
+        );
+
+    }
+
+
+    document.body.removeChild(textarea);
+
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+function openInstagram() {
+
+    window.open(
+        "https://www.instagram.com/zyrazin_/",
+        "_blank"
+    );
+
+}
+
+
+/* =========================================================
+   CONFIRMATION
+========================================================= */
+
+function closeConfirm() {
+
+    document.getElementById("confirmModal").style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   CLOSE MODALS BY CLICKING OUTSIDE
+========================================================= */
+
+window.onclick = function(event) {
+
+
+    const productModal =
+        document.getElementById("productModal");
+
+
+    const checkoutModal =
+        document.getElementById("checkoutModal");
+
+
+    const paymentModal =
+        document.getElementById("paymentModal");
+
+
+    const confirmModal =
+        document.getElementById("confirmModal");
+
+
+    if (event.target === productModal) {
+
+        closeProduct();
+
+    }
+
+
+    if (event.target === checkoutModal) {
+
+        closeCheckout();
+
+    }
+
+
+    if (event.target === paymentModal) {
+
+        closePayment();
+
+    }
+
+
+    if (event.target === confirmModal) {
+
+        closeConfirm();
+
+    }
+
+};
+
+
+/* =========================================================
+   INITIAL CART
+========================================================= */
+
+updateCart();
+
+
+</script>
+
+
+</body>
+</html>
